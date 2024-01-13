@@ -1,31 +1,28 @@
 const express=require('express')
-const connector=require('./db')
-const tokenverify=require('./tokenverify_middleware')
+const connector=require('../db')
 const jwt=require('jsonwebtoken')
 require('dotenv').config()
-const checkperson=require('./signup')
 const router=express.Router();
 
-router.post('/removetocart',async (req,res)=>{ 
+router.post('/addtocart',async (req,res)=>{ 
    
     var token = req.header('x-token');
     try {
       if (!token) {
+        console.log('hello');
         return res.status(401).json({ message: 'Login is required' });
       }
       const payload = jwt.verify(token, process.env.jwt_secretekey);
       if(payload)
       {
         const mail=payload.email;
-        console.log(req.body)
-
         const flag=fetchcartdata(mail,req.body)
+      
         if(flag)
         {
             const q1='select * from ecomartcart where email=(?) and id=(?)'
-            connector.query(q1,[mail,req.body.id],(err,data)=>{
+            connector.query(q1,[mail,req.body[0].id],(err,data)=>{
                 if(err) throw err;
-               console.log('empty data is',data[0])
                 res.status(200).json({status:'Success',data:data})
             })
         }
@@ -39,23 +36,21 @@ router.post('/removetocart',async (req,res)=>{
 module.exports=router
 function fetchcartdata(email,productdata)
 {
-   
+    var productdata=productdata[0]
     const query1='select * from ecomartcart where email=(?) && id=(?)'
     connector.query(query1,[email,productdata.id],(err,data)=>{
         if(err) throw err;
-        console.log(data)
-        if(data[0].count==1)
+        if(data.length==0)
         {
-          console.log('hello this is the removeing data',data[0])
-            const query2='delete from ecomartcart where email=(?) && id=(?)';
-            connector.query(query2,[email,data[0].id],(err)=>{
-            if(err) throw err;
-         
+            const query2='insert into ecomartcart values(?,?,?,?,?,?)';
+            connector.query(query2,[email,productdata.id,productdata.productname,productdata.price,productdata.productimg,1],(err,data)=>{
+                if(err) throw err;
+               
             })
         }
         else{
             const count=data[0].count;
-             const inccount=count-1
+             const inccount=count+1
              const query3='update ecomartcart set count=(?) where id=(?)'
              connector.query(query3,[inccount,productdata.id],(err,data)=>{
                 if(err) throw err;
@@ -63,5 +58,5 @@ function fetchcartdata(email,productdata)
              })
         }
     })
-    return true;
+    return true;
 }

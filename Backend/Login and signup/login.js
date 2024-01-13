@@ -1,7 +1,7 @@
 const express = require('express');
 const { checkperson } = require('./signup');
 const bcrypt = require('bcrypt');
-const connector = require('./db');
+const connector = require('../db');
 const router = express.Router();
   const jwt = require('jsonwebtoken');
 require('dotenv').config();

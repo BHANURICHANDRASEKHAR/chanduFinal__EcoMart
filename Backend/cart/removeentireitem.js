@@ -1,6 +1,6 @@
 const express=require('express');
 const router=express.Router();
-const connector=require('./db');
+const connector=require('../db');
 const jwt=require('jsonwebtoken')
 require('dotenv').config();
 router.put('/removeitemfromcart',(req,res)=>{

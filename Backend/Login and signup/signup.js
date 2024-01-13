@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const { promisify } = require('util');
-const connetor = require('./db');
+const connetor = require('../db');
 
 router.post('/signup', async (req, res) => {
   try {

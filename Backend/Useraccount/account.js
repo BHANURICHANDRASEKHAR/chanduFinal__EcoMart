@@ -1,7 +1,7 @@
 const express=require('express')
 const router=express.Router();
-const {tokenverify}=require('./tokenverify_middleware')
-const {checkperson}=require('./signup')
+const {tokenverify}=require('../tokenverify_middleware')
+const {checkperson}=require('../Login and signup/signup')
 router.get('/user',tokenverify,async(req,res)=>{
    
 
