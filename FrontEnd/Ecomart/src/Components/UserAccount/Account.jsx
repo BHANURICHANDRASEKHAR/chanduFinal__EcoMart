@@ -12,6 +12,7 @@ export default function Account() {
   const navigate=useNavigate();
   useEffect(()=>{
     fetchdatafromdatabase(...['get', 'http://localhost:5000/user', dispatch, navigate]);
+    console.log('page rendered and data featched')
   },[])
 
   const isOutletRendering = useOutlet();

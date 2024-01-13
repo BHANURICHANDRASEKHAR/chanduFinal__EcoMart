@@ -32,7 +32,6 @@ useEffect(()=>{
 function submit()
 {
   const validation=adduserdata(userdetails,setmsg)
-  console.log('hello',validation)
   if(validation)
   {
   axios.post('http://localhost:5000/adduserdata',userdetails)

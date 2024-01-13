@@ -1,42 +1,43 @@
-import React,{useState  } from 'react'
+import React,{useState,useEffect  } from 'react'
 import './input.css'
 import UserAddress from './UserAddress'
 import useAdress from '../../customs hooks/useAdress';
+import { ToastContainer,toast } from 'react-toastify';
+import { useDispatch,useSelector } from 'react-redux';
+import {notifyerror,notifysuccess} from '../../../../tostisy'
+import {userdetailsActions} from '../../../../Redux-store/Centralstore/accountslice';
+import {addressvalidation} from '../../Home/login/signupformvalidation';
+import Statedata from './Statedata';
+import { Cascader } from 'antd';
+import axios from 'axios';
 export default function AddUserAddress() {
+  const userdata=useSelector((state)=>state.userdetaileslice.userdetails);
   const [adduseraddress,removeuseraddress]=useAdress();
-    const errorflag=true;
-    const divStyle = {
-        color: errorflag ? 'red' : 'green',
-        marginTop:'20px',
-        fontSize:'16px'
-        
-      };
-    const error='hello';
+  
+    const [error,setError]=useState('');
     const [edit,setEdit]=useState(false)
     const [values, setValues] = useState({
         name:'',
         email:'',
         number:'',
         pincode:'',
-        locality: '',
+      
         address: '',
         city: '',
         state: '',
         landmark: '',
-        altphone: '',
         addtype:'',
     
       });
-    
-      const changeHandler = (event) => {
-        
+      useEffect(()=>{
+        values.email=userdata.length > 0 ? userdata[0].email : '';
+      },[])
+      const changeHandler = (event) => {  
         const { name, value } = event.target;
         setValues({
           ...values,
           [name]: value
         });
-       
-       
       };
     
       function show() {
@@ -44,8 +45,28 @@ export default function AddUserAddress() {
       }
       const submit = (event) => {
         event.preventDefault();
-        adduseraddress(values)
+        console.log(values)
+        const flag=addressvalidation(values,setError)
+        if(flag)
+        {
+          axios.post('http://localhost:5000/useraddress',values)
+          .then(res=>{
+           if(res.data.status=='Success')
+           {
+            notifysuccess(toast,'successfully UPdated')
+           }
+          }).catch(e=>{
+   console.log(e.message)
+          })         
+        }
+        else{
+          notifyerror(toast,error)
+        }
+        // adduseraddress(values)
       }
+      const changeHandler1 = (value) => {
+        setValues({ ...values, state: value[0] });
+      };
     return (
         <div className='id'>
           <h3>Manage Address</h3>
@@ -66,13 +87,13 @@ export default function AddUserAddress() {
               <div className='input'>
                 <input
                   type="mail"
-                  placeholder='Email'
                   name='mail'
-                  onChange={changeHandler}
+                  disabled
+                  value={values.email}
                 />
                 <input
                   type="text"
-                  placeholder='10 digits of number'
+                  placeholder='Enter name'
                   name='name'
                   onChange={changeHandler}
                 />
@@ -84,12 +105,7 @@ export default function AddUserAddress() {
                   name='pincode'
                   onChange={changeHandler}
                 />
-                <input
-                  type="text"
-                  placeholder='Locality'
-                  name='locality'
-                  onChange={changeHandler}
-                />
+               
               </div>
               <div className='input' style={{ marginTop: '30px' }}>
                 <label>Address</label>
@@ -109,13 +125,8 @@ export default function AddUserAddress() {
                   name='city'
                   onChange={changeHandler}
                 />
-                <input
-                  type="text"
-                  placeholder='state'
-                  name='state'
-                  onChange={changeHandler}
-                />
-              </div>
+                <Cascader options={Statedata} placeholder='Select a State' onChange={changeHandler1} name='state'/>
+                </div>
               <div className='input'>
                 <input
                   type="text"
@@ -124,9 +135,9 @@ export default function AddUserAddress() {
                   onChange={changeHandler}
                 />
                 <input
-                  type="text"
-                  placeholder='alt phone number(optional)'
-                  name='altphone'
+                  type="number"
+                  placeholder='phone number'
+                  name='number'
                   onChange={changeHandler}
                 />
                 </div>
@@ -135,7 +146,7 @@ export default function AddUserAddress() {
                 <input type="radio"  name='addtype' value="Home"  onChange={changeHandler}/><label>Home</label>
                 <input type="radio"  name='addtype' value="Office"  onChange={changeHandler}/><label>Office</label>
                  </div>
-                 <div style={divStyle}>{error}</div>
+                 
               <button type="button" onClick={submit} style={{marginBottom:"20px"}}>
                 Save
               </button>
@@ -144,7 +155,8 @@ export default function AddUserAddress() {
               </button>
             </React.Fragment>
           )}
-          <UserAddress setValues={setValues}/>
+          <UserAddress setValues={setValues} />
+          <ToastContainer/>
         </div>
       );
     };

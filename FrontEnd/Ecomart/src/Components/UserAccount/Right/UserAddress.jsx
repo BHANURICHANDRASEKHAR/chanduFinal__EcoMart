@@ -2,13 +2,21 @@ import React, { useState, useEffect } from 'react';
 import reacticons from '../../../icons';
 import useAdress from '../../customs hooks/useAdress';
 import Userlogo from '../../UserAccount/Userlogo'
+import { useSelector } from 'react-redux';
 import { Popconfirm } from 'antd';
 function UserAddress(pro) {
   const [addUserAddress, removeUserAddress, addresslist] = useAdress();
   const [flag, setFlag] = useState(true);
+  const userdata=useSelector((state)=>state.userdetaileslice.userdetails);
 
   useEffect(() => {
-    // Check the number of addresses when the component mounts
+    async function fetchdata()
+    {
+      const email=await userdata.length > 0 ? userdata[0].email : '';
+      addUserAddress(email);
+
+    }
+    fetchdata();
     if (addresslist && addresslist.no_ofaddress >= 1) {
       setFlag(true);
     } else {

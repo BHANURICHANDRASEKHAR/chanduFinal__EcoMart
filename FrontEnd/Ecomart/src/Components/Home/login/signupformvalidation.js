@@ -45,6 +45,7 @@ export function loginvalidate(formData,setError)
   setError(''); 
   return true;
 }
+// for add user detaiils
 export function adduserdata(formData,setMsg)
 {
   if (formData.firstname.trim() === '' || formData.lastname.trim() === '' || formData.phonenumber.trim==='') {
@@ -52,5 +53,29 @@ export function adduserdata(formData,setMsg)
     return false;
   }
   setMsg('');
+  return true;
+}
+// for user address
+const statedata = [
+  'Andaman and Nicobar Islands', 'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chandigarh', 'Chhattisgarh', 'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jammu', 'Jharkhand', 'Karnataka', 'Kashmir', 'Kerala', 'Ladakh', 'Lakshadweep', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Puducherry', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttarakhand', 'Uttar Pradesh', 'West Bengal'
+];
+export function addressvalidation(formData,setError)
+{
+  if (formData.name.trim() === '' || formData.number.trim() === '' || formData.pincode.trim() === ''  || formData.address.trim() === '' || formData.city.trim() === '' || formData.state.trim() === '') {
+    setError('Please fill in all required fields.');
+    return false;
+  }
+  if(formData.number.length!=10)
+  {
+    setError('Please Provide a Correct Number');
+   return false;
+  }
+  if(formData.pincode.length!=6)
+  {
+    setError('Please Provide a Correct Pincode');
+    return false;
+  }
+ 
+  setError('');
   return true;
 }
