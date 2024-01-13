@@ -1,0 +1,26 @@
+import axios from "axios";
+import { getcookie } from "../../../fetchfunction";
+import { useNavigate } from "react-router-dom";
+import {notifyerror} from '../../../tostisy'
+import { ToastContainer,toast } from "react-toastify";
+import { cartActions } from "../../../Redux-store/Centralstore/cart-slice";
+export default function fetchcartdatafromdatabase(dispatch,navigate) {
+    const token = getcookie();
+    
+   if(token)
+   {
+    axios.get('http://localhost:5000/cartdata', {
+        headers: { 'x-token': token }
+    })
+    .then((res) => {
+        dispatch(cartActions.datapush(res.data.data))
+    })
+    .catch((e) => {
+        console.log('error', e);
+    });
+   }
+   else{
+    notifyerror(toast,'please login...')
+    navigate('/login')
+   }
+}
