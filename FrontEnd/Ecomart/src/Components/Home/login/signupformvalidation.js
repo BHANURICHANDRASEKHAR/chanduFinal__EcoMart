@@ -45,3 +45,12 @@ export function loginvalidate(formData,setError)
   setError(''); 
   return true;
 }
+export function adduserdata(formData,setMsg)
+{
+  if (formData.firstname.trim() === '' || formData.lastname.trim() === '' || formData.phonenumber.trim==='') {
+    setMsg('Please fill in all required fields.');
+    return false;
+  }
+  setMsg('');
+  return true;
+}

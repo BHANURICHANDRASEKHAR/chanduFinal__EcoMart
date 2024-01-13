@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 function useFunction() {
   const dispatch = useDispatch();
 const cartdata=useSelector(state=>state.cartslice);
-console.log("data is",cartdata.itemslist)
 const navigate=useNavigate();
 
   function addItems(data) {

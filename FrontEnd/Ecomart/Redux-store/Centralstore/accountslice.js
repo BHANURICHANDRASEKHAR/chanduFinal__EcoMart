@@ -1,20 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 const userdetaileslice=createSlice({
-    name:'userslice',
+    name:'userdetaileslice',
     initialState:{userdetails:[],count:0},
     reducers:{
         adduserdetails(state,action)
         {
-            const data=action.payload
-            if(state.count==0)
-            {
+            const data=action.payload[0]
+            console.log(data)
+             const {name}=data; 
+            
+             if(state.count==0)
+             {
                 state.userdetails.push({
-                    name:data.name,
-                    email:data.email,
-                    phnumber:data.phnumber
+                    name:name,
+                    email:data.mail,
+                    phnumber:data.phnumber,
+                    phnumber:data.phnumber,
+                    firstname:data.firstname,
+                    lastname:data.lastname,
+                    gender:data.gender,
                 })
-                state.count+=1
-            }
+                state.count+=1;
+             }
         }
         
     }

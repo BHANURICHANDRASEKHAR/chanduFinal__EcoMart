@@ -5,8 +5,8 @@ import UserDetails from './UserDetails'
 function Left() {
   return (
    <React.Fragment>
-   <Userlogo/>
-   <UserDetails/>
+   <Userlogo />
+   <UserDetails />
    </React.Fragment>
   )
 }

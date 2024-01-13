@@ -8,6 +8,7 @@ const useraddressslice=createSlice({
     reducers: {
         addaddress(state, action) {
           const address = action.payload;
+          
           state.userAddressList.push({
             name: address.name,
             email: address.email,

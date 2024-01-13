@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './input.css'
+import { useSelector,useDispatch } from 'react-redux'
+import {adduserdata} from '../../Home/login/signupformvalidation'
+import axios from 'axios';
+import {notifyerror,notifysuccess} from '../../../../tostisy'
+import {userdetailsActions} from '../../../../Redux-store/Centralstore/accountslice';
+import { ToastContainer,toast } from 'react-toastify';
 function UserInfo() {
+  const dispatch=useDispatch();
+  const userdata=useSelector((state)=>state.userdetaileslice.userdetails);
+  console.log(userdata)
     const [edit,setedit]=useState(false)
-    function editFun()
-    {
-        setedit(!edit)
-    }
+  const [msg,setmsg]=useState('')
     const [userdetails,setuserdetails]=useState({
         firstname:'',
         lastname:'',
@@ -15,9 +21,39 @@ function UserInfo() {
         })
         const setuserdata=(e)=>{setuserdetails({...userdetails,[e.target.name]:e.target.value})
         }
+  userdetails.email= userdata.length > 0 ? userdata[0].email : '';
+
+useEffect(()=>{
+  userdetails.firstname= userdata.length > 0 ? userdata[0].firstname : '';
+  userdetails.lastname= userdata.length > 0 ? userdata[0].lastname : '';
+  userdetails.phonenumber=userdata.length> 0 ? userdata[0].phnumber:'';
+  console.log('page rendered in user info page')
+},[userdata ])
 function submit()
 {
+  const validation=adduserdata(userdetails,setmsg)
+  console.log('hello',validation)
+  if(validation)
+  {
+  axios.post('http://localhost:5000/adduserdata',userdetails)
+  .then((res)=>{
+      if(res.data.status='Success')
+      {
+        dispatch(userdetailsActions.adduserdetails(res.data.data));
+        notifysuccess(toast,"SuccessFully Updated");
 
+      }
+    
+  })
+ 
+  }
+  else{
+    notifyerror(toast,msg)
+  }
+}
+function editFun()
+{
+    setedit(!edit)
 }
   return (
     <div className='id' data-aos="fade-down"
@@ -80,8 +116,9 @@ function submit()
      disabled={!edit}
       onChange={setuserdata}
    />    
-      </div>{edit?(<div><div >error</div>
-      <button onClick={submit}>Save</button></div>):(<span></span>)}
+      </div>
+      {edit && <button onClick={submit}>Save</button>}
+      <ToastContainer/>
       </div>
     
   );  

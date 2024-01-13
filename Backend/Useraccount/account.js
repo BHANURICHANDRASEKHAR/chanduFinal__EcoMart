@@ -3,8 +3,6 @@ const router=express.Router();
 const {tokenverify}=require('../tokenverify_middleware')
 const {checkperson}=require('../Login and signup/signup')
 router.get('/user',tokenverify,async(req,res)=>{
-   
-
    if(req.user)
    {
     const data=await checkperson(req.user);

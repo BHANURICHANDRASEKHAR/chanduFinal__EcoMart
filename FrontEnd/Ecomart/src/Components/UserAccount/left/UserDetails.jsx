@@ -4,9 +4,9 @@ import reacticons from '../../../icons';
 import { Popconfirm } from 'antd';
 import useAuth from '../../customs hooks/useAuth';
 import '../useraccount.css'
-const UserDetails = () => {
+const UserDetails = ({userdata}) => {
+
 const [auth,logout]=useAuth()
-console.log('helo this',logout)
     const AccountSettings=()=>{
         return( <div style={{ margin:'10px' }}>
         <div className='d-flex'><reacticons.usersetting className='icons'/><p><b>ACCOUNT SETTINGS</b></p>
