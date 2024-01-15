@@ -7,22 +7,27 @@ const useraddressslice=createSlice({
     },
     reducers: {
         addaddress(state, action) {
+          state.userAddressList=[];
+          state.no_ofaddress=0;
           const address = action.payload;
-          
-          state.userAddressList.push({
-            name: address.name,
-            email: address.email,
-            number: address.number,
-            pincode: address.pincode,
-            locality: address.locality,
-            address: address.address,
-            city: address.city,
-            state: address.state, 
-            landmark: address.landmark,
-            altphone: address.altphone,
-            addtype: address.addtype,
+          address.forEach(address => {
+            state.userAddressList.push({
+              name: address.name,
+              email: address.mail,
+              number: address.number,
+              pincode: address.pincode,
+             
+              address: address.address,
+              city: address.city,
+              state: address.state, 
+              landmark: address.landmark,
+           
+              addtype: address.addtype,
+            });
+            state.no_ofaddress+=1
           });
-          state.no_ofaddress+=1
+         
+         
         },
         removeaddress(state,action)
         {

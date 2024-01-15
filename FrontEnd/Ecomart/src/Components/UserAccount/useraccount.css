@@ -1,15 +1,13 @@
 .grid1{
     display: grid;
     grid-template-columns:1.1fr 4fr;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .grid1-itmes{
     background-color:transparent;
     padding: 5px;
 }
-.grid1-itmes:first-child{
-    border-right:1px solid rgb(0, 0, 0) ;
 
-}
 ul li{
     text-decoration: none;
     list-style-type: none;

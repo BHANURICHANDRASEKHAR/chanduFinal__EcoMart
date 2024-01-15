@@ -4,25 +4,18 @@ import useAdress from '../../customs hooks/useAdress';
 import Userlogo from '../../UserAccount/Userlogo'
 import { useSelector } from 'react-redux';
 import { Popconfirm } from 'antd';
+import NoPageFound from '../../NoPageFound';
 function UserAddress(pro) {
-  const [addUserAddress, removeUserAddress, addresslist] = useAdress();
+  const [getUserAddress, removeUserAddress, addresslist] = useAdress();
   const [flag, setFlag] = useState(true);
-  const userdata=useSelector((state)=>state.userdetaileslice.userdetails);
+  const useraddressdata=useSelector((state)=>state.useraddressslice.userAddressList);
+
 
   useEffect(() => {
-    async function fetchdata()
-    {
-      const email=await userdata.length > 0 ? userdata[0].email : '';
-      addUserAddress(email);
-
-    }
-    fetchdata();
-    if (addresslist && addresslist.no_ofaddress >= 1) {
-      setFlag(true);
-    } else {
-      setFlag(false);
-    }
-  }, [addresslist]);
+    console.log('page rendered and data is the',useraddressdata);
+    getUserAddress();
+   
+  }, [pro.count]);
 
   const addressDelete = (address) => {
     removeUserAddress(address)
@@ -35,8 +28,8 @@ function UserAddress(pro) {
   return (
     <React.Fragment>
       <div className='container'>
-        {flag ? (
-          addresslist && addresslist.userAddressList.map((address1,index) => {
+        {useraddressdata.length>0 ? (
+          useraddressdata.map((address1,index) => {
             const { name, number, addtype, pincode, city, state, address: userAddress, locality } = address1;
             return (
               <div key={index} className='row' style={{ border: '1px solid #D3D3D3', padding: '10px', marginBottom: '5px' }}>
@@ -53,7 +46,7 @@ function UserAddress(pro) {
                 </div>
                 <Popconfirm
                 title="Delete the Item"
-                description="Are you sure to delete this Item?"
+                description="Are you sure to delete this address?"
                 style={{width:'100px'}}
                 onConfirm={()=>addressDelete(address1)}
                 okText="Yes"
@@ -65,7 +58,10 @@ function UserAddress(pro) {
             );
           })
         ) : (
-          <h5>No addresses are found</h5>
+          <NoPageFound  
+          status="403"
+          title="No Address are Found"
+          subTitle="No Address are Found"/>
         )}
       </div>
     </React.Fragment>

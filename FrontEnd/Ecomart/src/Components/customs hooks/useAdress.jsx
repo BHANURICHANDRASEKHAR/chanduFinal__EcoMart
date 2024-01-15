@@ -1,19 +1,44 @@
 import React from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import {AddressActions} from '../../../Redux-store/Centralstore/useraddressslice'
+import { getcookie } from '../../../fetchfunction';
+import axios from 'axios';
 export default function useAdress() {
 const dispatch=useDispatch();
 const addresslist=useSelector(state=>state.useraddressslice)
-
-function addUserAddress(userdata)
+function getUserAddress()
 {
-  console.log('userdata is the 123',userdata)
-    // dispatch(AddressActions.addaddress(data))
+  const token=getcookie();
+  axios.get('http://localhost:5000/getuseraddress',{
+    headers:{'x-token':token}
+  })
+  .then((res)=>{
+    if(res.data.status=='Success')
+    {
+      dispatch(AddressActions.addaddress(res.data.data))
+
+    }
+  })
+  .catch(e=>{
+    console.log(e.message)
+  })
+
 }
 function removeuseraddress(data)
 {
-  dispatch(AddressActions.removeaddress(data))
+  axios.put('http://localhost:5000/deleteuseraddress',data)
+  .then((res)=>{
+    if(res.data.status=='Success')
+    {
+      dispatch(AddressActions.addaddress(res.data.data))
+
+    }
+  })
+  .catch(e=>{
+    console.log(e.message)
+  })
+  // dispatch(AddressActions.removeaddress(data))
 }
 
-  return [addUserAddress,removeuseraddress,addresslist]
+  return [getUserAddress,removeuseraddress,addresslist]
 }

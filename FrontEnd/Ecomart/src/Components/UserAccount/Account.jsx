@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import Left from './left/Left'
 import './useraccount.css'
+import './common.css'
 import Faq from './Right/Faq'
 import { useDispatch,useSelector } from 'react-redux' //use dispatch fnction 
 import { userdetailsActions } from '../../../Redux-store/Centralstore/accountslice'

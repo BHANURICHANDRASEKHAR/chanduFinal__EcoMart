@@ -15,7 +15,7 @@ export default function fetchdatafromdatabase(...rest) {
   })
     .then(res => {
       if (res.data.status === 'Success') {
-      console.log(res.data.data)
+    
         dispatch(userdetailsActions.adduserdetails(res.data.data));
        
       } else {

@@ -1,3 +1,4 @@
+import axios from "axios";
 const validateForm = (formData,setError) => {
     if (formData.name.trim() === '' || formData.email.trim() === '' || formData.password.trim() === '') {
       setError('Please fill in all required fields.');
@@ -67,15 +68,39 @@ export function addressvalidation(formData,setError)
   }
   if(formData.number.length!=10)
   {
-    setError('Please Provide a Correct Number');
+    setError('Phone number Mustbe 10 digits');
    return false;
   }
   if(formData.pincode.length!=6)
   {
-    setError('Please Provide a Correct Pincode');
+    setError('Pin code Length Must be 6');
     return false;
   }
- 
-  setError('');
-  return true;
+ try{
+ const pincode=formData.pincode;
+   axios.get(`https://api.postalpincode.in/pincode/${pincode}`)
+  .then((res)=>{
+    if(res.data[0].Status=='Error')
+    {
+      console.log(res)
+      setError('Please Provide a Correct Pincode');
+      console.log('hello')
+
+      return false;
+    }
+    else{
+      setError('');
+      return true;
+    }
+  })
+  .catch(e=>{
+console.log(e.message)
+  })
+ }
+ catch(e)
+ {
+  console.log(e.message)
+ }
+
+
 }
