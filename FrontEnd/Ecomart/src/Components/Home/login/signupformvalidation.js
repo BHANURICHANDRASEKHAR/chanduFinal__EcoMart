@@ -105,3 +105,18 @@ console.log(e.message)
 
 return true;
 }
+export const reviewvalidation=(...data)=>{
+ const [review,input,setError]=data;
+ 
+ if(review.comment.trim() === '' || review.name.trim() === '')
+ {
+  setError('Please Fill All The Requirements');
+  return false;
+ }
+ if(!input.checked)
+ {
+  setError('Please Click on the Checkbox');
+  return false;
+ }
+ return true;
+}

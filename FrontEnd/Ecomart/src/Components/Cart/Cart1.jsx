@@ -6,6 +6,7 @@ import { Popconfirm } from 'antd';
 import fetchcartdatafromdatabase from './fetchcartdata'
 import Freeshoping from './Freeshoping'; // free shoping component
 import { useNavigate } from 'react-router-dom';
+import Cartbutton1 from './Cartbutton1'; //increment and dec button
 import Pricedetailes from './Pricedetailes';
 export default function Cart1() {
  const [addItems, removeItems,cartdata,removeentireItem]=useFunction();
@@ -39,8 +40,7 @@ const confirm = (id) => {
           <img src={productimg} />
           <h5>{productname} Per-500 Grams</h5>
           <p>₹{price}</p>
-          <button style={{ width: '100px' }} onClick={() => {removeItems((id))}}>-</button><span>{quantity}</span>
-          <button style={{ width: '100px' }} onClick={() => {addItems(([id,productname,price,productimg])) }}>+</button>
+         <Cartbutton1 item={e}/>
           <p>Total Price:<b>₹{price*quantity}</b></p>
     <Popconfirm
     title="Delete the Item"

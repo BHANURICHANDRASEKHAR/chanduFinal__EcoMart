@@ -200,7 +200,7 @@ const rawdata=[
               image : "https://img.freepik.com/free-photo/green-red-grape-isolated-white_1232-1957.jpg?size=626&ext=jpg",
               img1:'https://images.pexels.com/photos/760281/pexels-photo-760281.jpeg?auto=compress&cs=tinysrgb&w=400',
               img2:'https://images.pexels.com/photos/708777/pexels-photo-708777.jpeg?auto=compress&cs=tinysrgb&w=400',
-              img3:"https://images.pexels.com/photos/3487715/pexels-photo-3487715.jpeg?auto=compress&cs=tinysrgb&w=400",
+              img3:"https://w7.pngwing.com/pngs/732/650/png-transparent-grapes-illustration-kyoho-wine-juice-grape-grapes-natural-foods-food-blueberry-thumbnail.png",
               price : 45,type:'fruits'
             },
             { id:24,
@@ -250,9 +250,9 @@ const rawdata=[
               { id:29,
                 name : "Kiwis",
                 image : "https://img.freepik.com/free-photo/fresh-kiwi-fruit-isolated_144627-30034.jpg?size=626&ext=jpg",
-                img1:'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c154.png',
-                img2:'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c157.png',
-                img3:"https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c15b.png",
+                img1:'https://w7.pngwing.com/pngs/945/573/png-transparent-kiwi-fruit-illustration-juice-smoothie-kiwifruit-kiwi-natural-foods-food-citrus-thumbnail.png',
+                img2:'https://w7.pngwing.com/pngs/4/242/png-transparent-kiwifruit-large-kiwi-frut-four-kiwi-fruits-natural-foods-food-tropical-fruit-thumbnail.png',
+                img3:"https://w7.pngwing.com/pngs/945/573/png-transparent-kiwi-fruit-illustration-juice-smoothie-kiwifruit-kiwi-natural-foods-food-citrus-thumbnail.png",
               price:258,type:'fruits'
               },
               { id:30,

@@ -13,15 +13,7 @@
     float:left;
     object-fit:cover;
 }
-.cartitem button{
-    max-width:50px;
-    max-height: 35px;
-    background-color: #F0F0F0;
-    color: black;
-   
-    margin-top: 25px;
-    margin-left: 30px;
-}
+
 .cartitem span{
    padding-left: 25px;
    margin-top: 30px;
@@ -97,7 +89,7 @@
     background-color: #F0F0F0;
     border-radius:5px;
     overflow: hidden;
- margin-top:50px;
+  margin-top:50px;
 
     padding:0;
 
@@ -122,4 +114,19 @@
     text-transform: capitalize;
     margin-left:13%;
     text-wrap: wrap;
+  }
+  .cartbutton{
+    width:fit-content;
+    background:transparent;
+  }
+  .cartbutton button{
+    max-width:50px;
+    max-height: 35px;
+    background-color: rgb(217, 217, 217);
+    color: black;
+    margin-top: 25px;
+     margin-left: 20px;
+  }
+  .cartbutton span{
+    margin: 0%;
   }

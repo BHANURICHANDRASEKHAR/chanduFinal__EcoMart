@@ -13,8 +13,8 @@ const userextradata=require('./Useraccount/userextradata')
 const useraddress=require('./Useraccount/useraddress')
 const getuseraddress=require('./Useraccount/getuseraddress')
 const deleteuseraddress=require('./Useraccount/deleteuseraddress')
+const reviewrouter=require('./UserReview/review')
 app.use(bodyparser.urlencoded({extended:false}))
-
 app.use(bodyparser.json())
 app.use(
     cors({
@@ -36,6 +36,7 @@ app.use(userextradata)
 app.use(useraddress)
 app.use(getuseraddress)
 app.use(deleteuseraddress)
+app.use('/reviews',reviewrouter)
 app.listen(5000,()=>{
     console.log(`app is ruuning`)
 })

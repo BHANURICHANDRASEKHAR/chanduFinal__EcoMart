@@ -12,13 +12,14 @@ const navigate=useNavigate();
 
   function addItems(data) {
     const [id,productname,price,productimg]=data;
-    const data1=[{
-        productimg:productimg,
-        id:id,
-        price:price,
-        productname:productname,
-        
-    }]
+  const data1=[{
+    productimg:productimg,
+    id:id,
+    price:price,
+    productname:productname,
+    
+}]
+
     const token=getcookie();
     if(token)
     {

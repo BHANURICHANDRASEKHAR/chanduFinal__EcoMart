@@ -1,0 +1,48 @@
+import React from 'react'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
+import { getcookie } from '../../../fetchfunction';
+import { toast } from 'react-toastify';
+import { notifysuccess } from '../../../tostisy';
+function useReview() {
+  const navigate=useNavigate();
+  function Addreviewtodatabase(data){
+   
+    const token=getcookie();
+    if(token)
+    {
+        axios.post('http://localhost:5000/reviews/add',data,{
+        headers:{'x-token':token}
+        })
+        .then((res)=>{
+           if(res.data.status='Success')
+           {
+            notifysuccess(toast,res.data.msg)
+           }
+        })
+        .catch(e=>{
+            console.log(e.message)
+        })
+    }
+    else{
+        navigate('/login')
+    }
+  }
+ function fetchReviews(id) {
+  axios.get(`http://localhost:5000/reviews/get?id=${id}`)
+    .then((res) => {
+      if (res.data.status === 'Success') {
+        return res.data.data;
+      } else {
+        throw new Error('Failed to fetch reviews');
+      }
+    })
+    .catch((error) => {
+      console.error('Error fetching reviews:', error.message);
+      throw error;
+    });
+}
+  return [Addreviewtodatabase,fetchReviews];
+}
+
+export default useReview
