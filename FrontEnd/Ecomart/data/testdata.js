@@ -1,26 +1,26 @@
 const rawdata=[
         {id:1,
             name : "Tomato",
-            image : "https://el3.thembaydev.com/greenmart_fresh/wp-content/uploads/2021/08/product-57-291x291.jpg",
-              img1:'https://images.freeimages.com/images/large-previews/79e/tomato-serie-1-1190500.jpg?fmt=webp&w=350',
-              img2:'https://images.freeimages.com/images/large-previews/4df/tomato-1322328.jpg?fmt=webp&w=350',
-              img3:"https://images.freeimages.com/images/large-previews/af9/tomato-1325394.jpg?fmt=webp&w=350",
+            image : "https://freepngimg.com/thumb/tomato/10-tomato-png-image-thumb.png",
+              img1:'https://e7.pngegg.com/pngimages/159/512/png-clipart-close-up-of-red-tomato-plum-tomato-cherry-tomato-pizza-vegetable-tomato-slicer-tomato-natural-foods-food-thumbnail.png',
+              img2:'https://e7.pngegg.com/pngimages/83/337/png-clipart-red-tomatoes-illustration-cherry-tomato-vegetable-gratis-fresh-tomatoes-natural-foods-food-thumbnail.png  ',
+              img3:"https://e7.pngegg.com/pngimages/122/832/png-clipart-cherry-tomatoes-illustration-tomato-juice-vegetable-cherry-tomato-food-fruit-tomatoes-tomato-natural-foods-tomato-thumbnail.png",
             price :60,
               type:'vegi'
           },
           { id:2,
             name : "Potatoes",
-            image : "https://t3.ftcdn.net/jpg/00/15/45/08/240_F_15450810_x7Fl3Y1OEB4SiZ9WjSkmcWcZ30uGlcyZ.webp",
-            img1:'https://t3.ftcdn.net/jpg/00/15/77/76/240_F_15777649_z7uc02pqdoZXWJVesEWdsBj2LxkZvFgl.webp',
-            img2:'https://freepngimg.com/thumb/potato/7-potato-png-images-pictures-download-thumb.png',
-            img3:"https://freepngimg.com/thumb/potato/6-potato-png-images-pictures-download-thumb.png",
+            image : "https://freepngimg.com/thumb/potato/9-potato-png-images-pictures-download-thumb.png",
+            img1:'https://freepngimg.com/thumb/potato/16-potato-png-images-thumb.png',
+            img2:'https://freepngimg.com/thumb/potato/23-potato-png-images-thumb.png',
+            img3:"https://freepngimg.com/thumb/potato/14-potato-png-images-thumb.png",
             price : 45,
             type:'vegi'
           },
           { id:3,
             name : "Broccoli",
-            image : "https://el3.thembaydev.com/greenmart_fresh/wp-content/uploads/2021/08/product-54-291x291.jpg",
-            img1:'https://el3.thembaydev.com/greenmart_fresh/wp-content/uploads/2021/08/product-54-291x291.jpg',
+            image : "https://freepngimg.com/thumb/broccoli/2-broccoli-png-image-thumb.png",
+            img1:'https://freepngimg.com/thumb/broccoli/6-broccoli-png-image-thumb.png',
             img2:'https://freepngimg.com/thumb/broccoli/11-broccoli-png-image-thumb.png',
             img3:"https://freepngimg.com/thumb/broccoli/8-broccoli-png-image-thumb.png",
           
@@ -30,9 +30,9 @@ const rawdata=[
           { id:4,
             name : "Carrot",
             image : "https://purepng.com/public/uploads/large/purepng.com-carrotscarrotvegetablesfreshdeliciousefoodhealthycarrots-481521740717jmglq.png",
-            img1:'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c12d.png',
-            img2:'https://freepngimg.com/thumb/carrot/3-carrot-png-image-thumb.png',
-            img3:"https://freepngimg.com/thumb/carrot/5-carrot-png-image-thumb.png",
+            img1:'https://freepngimg.com/thumb/carrot/11-carrot-png-image-thumb.png',
+            img2:'https://freepngimg.com/thumb/carrot/14-carrot-png-image-thumb.png',
+            img3:"https://freepngimg.com/thumb/carrot/17-carrot-png-image-thumb.png",
           price:134,
           type:'vegi'
           }
@@ -124,9 +124,9 @@ const rawdata=[
               id:14,
               name : "Lemons",
               image : "https://t4.ftcdn.net/jpg/02/55/39/77/360_F_255397744_rwNCund3WjKsrsv6yKKpK8tzmJ8sYRnF.jpg",
-              img1:'https://images.pexels.com/photos/1585849/pexels-photo-1585849.jpeg?auto=compress&cs=tinysrgb&w=400',
+              img1:'https://freepngimg.com/thumb/lemon/12-green-lemon-png-image-thumb.png',
               img2:'https://images.pexels.com/photos/357577/pexels-photo-357577.jpeg?auto=compress&cs=tinysrgb&w=400',
-              img3:"https://images.pexels.com/photos/1585849/pexels-photo-1585849.jpeg?auto=compress&cs=tinysrgb&w=400",
+              img3:"https://freepngimg.com/thumb/lemon/9-lemon-png-image-thumb.png",
             price:134,  type:'vegi'
             },
          
@@ -135,7 +135,7 @@ const rawdata=[
     
               name : "Pumpkin",
               image : "https://freepngimg.com/thumb/pumpkin/12-2-pumpkin-png-clipart-thumb.png",
-              img1:'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQz6Dv3wm9vwPf6TjkUFI57ZG08lVVIaaKF1bW_EFRwPeJ2jxsN',
+              img1:'https://freepngimg.com/thumb/pumpkin/14-2-pumpkin-png-file.png',
               img2:'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSX_Z982O0cjSJuAJuEkyWDMh-kUEIjYNJkwk9umIy-beB-G-G9',
               img3:"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTrGqc255jreOV76SAoSNg0Rgnl841y9_o_-haA4D2kM3IJOiHM",
             price:180,  type:'vegi'
@@ -177,20 +177,14 @@ const rawdata=[
             price:150,  type:'vegi'
             }
             ,
-            { id:20,
-              name : " raw asparagus",
-              image : "https://t3.ftcdn.net/jpg/05/19/22/24/240_F_519222430_ME2pLn1VHNk3VPIdYSH6hHgnHRRbuCkh.webp",
-              img1:'https://t4.ftcdn.net/jpg/05/37/77/69/240_F_537776916_xw7ej4kAnBxHTWqnExiwfIWdEdYBkfcM.webp',
-              img2:'https://as2.ftcdn.net/v2/jpg/05/34/16/07/1000_F_534160787_roUwjMZ7Vy0O5djHNr6XI7Z9NhMNSiq3.webp',
-              img3:"https://as2.ftcdn.net/v2/jpg/05/34/16/07/1000_F_534160787_roUwjMZ7Vy0O5djHNr6XI7Z9NhMNSiq3.webp",
-            price:150,  type:'vegi'
-            },
+          
             {id:21,
               name : "Apple",
-              image:"https://el3.thembaydev.com/greenmart_fresh/wp-content/uploads/2021/08/product-26-291x291.jpg",
-              img1:'https://images.pexels.com/photos/1425358/pexels-photo-1425358.jpeg?auto=compress&cs=tinysrgb&w=600',
-                img2:'https://images.pexels.com/photos/5529540/pexels-photo-5529540.jpeg?auto=compress&cs=tinysrgb&w=600',
-                img3:"https://images.pexels.com/photos/5529540/pexels-photo-5529540.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "image" : "https://el3.thembaydev.com/greenmart_fresh/wp-content/uploads/2021/08/product-26.jpg",
+             "img1":'https://freepngimg.com/thumb/apple/9-apple-png-image.png',
+
+                "img2":'https://freepngimg.com/thumb/apple/20-green-apples-png-image.png',
+           "img3":'https://freepngimg.com/thumb/apple/23-png-apple-image-clipart-transparent-png-apple-thumb.png',
               price :60,type:'fruits'
             },
             { id:22,
@@ -212,9 +206,9 @@ const rawdata=[
             { id:24,
               name : "Avocados",
               image : "https://img.freepik.com/free-photo/green-avocados-white-surface_144627-45153.jpg?size=626&ext=jpg",
-              img1:'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c12d.png',
-              img2:'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c12d.png',
-              img3:"https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c12d.png",
+              img1:'https://freepngimg.com/thumb/avocado/9-2-avocado-png-pic-thumb.png',
+              img2:'https://freepngimg.com/thumb/avocado/11-2-avocado-png-thumb.png',
+              img3:"https://freepngimg.com/thumb/avocado/41675-7-half-avocado-free-download-png-hq-thumb.png",
             price:148,type:'fruits'
             }
             ,
@@ -264,9 +258,9 @@ const rawdata=[
               { id:30,
                 name : "Mangos",
                 image : "https://img.freepik.com/free-photo/mango_144627-27543.jpg?size=626&ext=jpg",
-                img1:'https://assets.stickpng.com/thumbs/5a0212d018e87004f1ca437c.png',
-                img2:'https://assets.stickpng.com/thumbs/5a02138b18e87004f1ca437e.png',
-                img3:"https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c15c.png",
+                img1:'https://freepngimg.com/thumb/mango/11-2-mango-png-clipart-thumb.png',
+                img2:'https://freepngimg.com/thumb/mango/3-2-mango-png-image-thumb.png',
+                img3:"https://freepngimg.com/thumb/mango/9-2-mango-transparent-thumb.png",
                price:134,type:'fruits'
               },
               // {
@@ -288,35 +282,45 @@ const rawdata=[
               price:258,type:'fruits'
               }
               ,     {
-                id:13,
+                id:33,
                 name : "Orange",
                 image :"https://el3.thembaydev.com/greenmart_fresh/wp-content/uploads/2021/08/product-16-291x291.jpg",
-                img1:'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c16f.png',
-                img2:'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c16c.png',
-                img3:"https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c16d.png",
+                img1:'https://freepngimg.com/thumb/orange/4-orange-png-image-download-thumb.png',
+                img2:'https://freepngimg.com/thumb/orange/34-orange-png-image-download-thumb.png',
+                img3:"https://freepngimg.com/thumb/orange/5-orange-png-image-download-thumb.png",
                price:134,type:'fruits'
               }
-              ,     {
-                id:34,
-                name : "Lemons",
-                image : "https://el3.thembaydev.com/greenmart_fresh/wp-content/uploads/2021/08/product-14-291x291.jpg",
-                img1:'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c15f.png',
-                img2:'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c15a.png',
-                img3:"https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c159.png",
-              price:258,type:'fruits'
-              },
+              ,   
+         
            
               {
                 id:35,
     
                 name : "Pineapple",
                 image : "https://img.freepik.com/premium-photo/pineapple-juice-with-splashes-with-pineapple-fruit-isolated-white-background-studio-shot_741910-7870.jpg?w=2000",
-                img1:'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c181.png',
-                img2:'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c184.png',
-                img3:"https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c185.png",
+                img1:'https://freepngimg.com/thumb/pineapple/3-pieces-of-pineapple-png-thumb.png',
+                img2:'https://freepngimg.com/thumb/pineapple/11-pineapple-png-image-download-thumb.png',
+                img3:"https://freepngimg.com/thumb/pineapple/5-pineapple-png-image-download-thumb.png",
                price:134,type:'fruits'
               }
               ,
+              {id:41,
+                name : "Chicken",
+                image : "https://el3.thembaydev.com/greenmart_fresh/wp-content/uploads/2021/08/product-37-291x291.jpg",
+                  img1:'https://t3.ftcdn.net/jpg/01/59/48/24/240_F_159482469_A7MgzJOwFi3ZznkvFL45vwjzY2U1qwcr.webp',
+                  img2:'https://t4.ftcdn.net/jpg/01/96/89/27/240_F_196892798_LinMYZl6cEdpgvqyskabF4dW9XU5m2lx.webp',
+                  img3:"https://t3.ftcdn.net/jpg/01/59/48/24/240_F_159482469_A7MgzJOwFi3ZznkvFL45vwjzY2U1qwcr.webp",
+                price :60,type:'meat'
+              },
+      
+                {id:46,
+                  name : "  Soy Milk",
+                  image : "https://img.freepik.com/free-photo/milk-glass-jug-wooden-table_1150-17621.jpg?size=626&ext=jpg",
+                    img1:'https://freepngimg.com/thumb/milk/4-2-milk-png-clipart-thumb.png',
+                    img2:'https://freepngimg.com/thumb/milk/1-2-milk-png-thumb.png',
+                    img3:"https://t3.ftcdn.net/jpg/03/17/55/72/240_F_317557219_e0TtE4cupvKGTugbNAo535K29dHxeOR9.jpg",
+                  price :60
+                },
               // {
               //   id:36,
               //   name : " Pomegranate",
@@ -361,14 +365,14 @@ const rawdata=[
               //   img3:"https://images.pexels.com/photos/59830/melons-water-melons-fruit-green-59830.jpeg?auto=compress&cs=tinysrgb&w=600",
               // price:134
               // },
-              {id:41,
-                name : "Chicken",
-                image : "https://el3.thembaydev.com/greenmart_fresh/wp-content/uploads/2021/08/product-37-291x291.jpg",
-                  img1:'https://t3.ftcdn.net/jpg/01/59/48/24/240_F_159482469_A7MgzJOwFi3ZznkvFL45vwjzY2U1qwcr.webp',
-                  img2:'https://t4.ftcdn.net/jpg/01/96/89/27/240_F_196892798_LinMYZl6cEdpgvqyskabF4dW9XU5m2lx.webp',
-                  img3:"https://t3.ftcdn.net/jpg/01/59/48/24/240_F_159482469_A7MgzJOwFi3ZznkvFL45vwjzY2U1qwcr.webp",
-                price :60,type:'meat'
-              },
+              // {id:41,
+              //   name : "Chicken",
+              //   image : "https://el3.thembaydev.com/greenmart_fresh/wp-content/uploads/2021/08/product-37-291x291.jpg",
+              //     img1:'https://t3.ftcdn.net/jpg/01/59/48/24/240_F_159482469_A7MgzJOwFi3ZznkvFL45vwjzY2U1qwcr.webp',
+              //     img2:'https://t4.ftcdn.net/jpg/01/96/89/27/240_F_196892798_LinMYZl6cEdpgvqyskabF4dW9XU5m2lx.webp',
+              //     img3:"https://t3.ftcdn.net/jpg/01/59/48/24/240_F_159482469_A7MgzJOwFi3ZznkvFL45vwjzY2U1qwcr.webp",
+              //   price :60,type:'meat'
+              // },
       
               //   {id:46,
               //     name : "  Soy Milk",

@@ -102,7 +102,7 @@ const [addItems]=useFunction();
           <div className='main-grid'>
             {groupdata.map((e,index) => {
               const { id, image, name, price } = e;
-           
+            const data=JSON.stringify(e)
 
               return (
              
@@ -111,8 +111,11 @@ const [addItems]=useFunction();
                 data-aos-duration='900'
                 data-aos-delay=''
                 data-aos-easing='ease-in-out'>
-          <Card.Img variant="top" src={image} />
+                <Card.Img variant="top" src={image} />
           <Card.Body>
+       
+          <Link to={`/productdetails/${e.id}`} style={{textDecoration: 'none', color: 'inherit'}}>
+          
            <div style={{marginLeft:'15px'}}>
            <Card.Title><b>{name}</b></Card.Title>
            <Card.Text>
@@ -120,6 +123,7 @@ const [addItems]=useFunction();
              <br />
              <b style={{ marginTop: '10px' }}>Price: {price}</b>
            </Card.Text></div>
+           </Link>
             <button
             
               style={{width:'auto'}}
@@ -131,6 +135,7 @@ const [addItems]=useFunction();
               Add to Cart
             </button>
           </Card.Body>
+         
         </Card>
               );
             })}

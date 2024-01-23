@@ -16,6 +16,7 @@ import { AuthActions } from '../../Redux-store/Centralstore/reduers'
 const Shop=React.lazy(()=>import('../Components/shop/Shop'))
 const Cart=React.lazy(()=>import('../Components/Cart/Cart'))
 import Loading from '../Components/Loading'
+import ProductsDetails from '../Components/Product details/ProductsDetails'
 export default function Routers() {
   // const userauth = useSelector(state => state.userslice.userauth);
   // console.log("userauth is ", userauth);
@@ -46,7 +47,7 @@ export default function Routers() {
    <Route path='/login' element={<Login/>}/>
    
    <Route path='/signup' element={<Signup/>}/>
-    
+    <Route path='/productdetails/:id' element={<ProductsDetails/>}/>
    <Route path='*' element={<NoPageFound status='404' title='404' subtitle="Sorry, the page you visited does not exist."/>}/>
    </Routes>
    

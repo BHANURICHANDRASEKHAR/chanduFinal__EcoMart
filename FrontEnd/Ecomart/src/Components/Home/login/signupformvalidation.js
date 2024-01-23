@@ -62,6 +62,7 @@ const statedata = [
 ];
 export function addressvalidation(formData,setError)
 {
+
   if (formData.name.trim() === '' || formData.number.trim() === '' || formData.pincode.trim() === ''  || formData.address.trim() === '' || formData.city.trim() === '' || formData.state.trim() === '') {
     setError('Please fill in all required fields.');
     return false;
@@ -102,5 +103,5 @@ console.log(e.message)
   console.log(e.message)
  }
 
-
+return true;
 }

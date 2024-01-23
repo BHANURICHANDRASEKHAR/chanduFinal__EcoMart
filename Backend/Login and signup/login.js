@@ -9,11 +9,13 @@ require('dotenv').config();
 router.post('/login', async (req, res) => {
   const data = req.body;
   try {
+
     const sqldata = await checkperson(data);
     if (!sqldata || sqldata.length == 0) {
+      console.log(sqldata)
       res.status(200).json({ status: 'unSuccess', msg: 'User Not Found' });
     }
-    const currentdata = sqldata[0];
+   else{ const currentdata = sqldata[0];
     const haspassword = currentdata.password;
     const textpassword = data.password;
     const passswordcompare = await bcrypt.compare(textpassword, haspassword);
@@ -22,8 +24,8 @@ router.post('/login', async (req, res) => {
 
       res.status(200).json({ status: 'Success', msg: `hello ${currentdata.name}`,token:token });
     } else {
-      res.status(200).json({ status: 'unSuccess', msg: 'Password was Incorrect' });
-    }
+      res.status(500).json({ status: 'unSuccess', msg: 'Password was Incorrect' });
+    }}
   } catch (e) {
     console.log(e.message);
     res.status(500).json({ status: 'unSuccess', msg: 'Internal Server Error' });

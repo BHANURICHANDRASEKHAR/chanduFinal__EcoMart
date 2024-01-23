@@ -1,0 +1,32 @@
+.parent{
+    display: flex;
+    justify-content: space-between;
+}
+.child{
+    width: 100%;
+    
+    background-color:transparent;
+    border: 1px solid black;
+    animation: animate 4s ease;
+}
+
+.imageparent{
+    height: 100px;
+    max-height: auto;
+    width: inherit;
+    display: flex;
+    object-fit:contain;
+    justify-content:space-between;
+}
+.imagechild{
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid black;
+    background: transparent;
+    margin: 2px;
+    cursor: pointer;  
+    image-resolution:inherit;
+}
+.imagechild:active{
+    border: 1px solid blue;
+}

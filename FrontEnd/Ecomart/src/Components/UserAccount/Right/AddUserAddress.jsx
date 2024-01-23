@@ -41,40 +41,38 @@ export default function AddUserAddress() {
       function show() {
         setEdit(prev=>!prev);
       }
-      const submit = (event) => {
+      const submit = async(event) => {
         event.preventDefault();
-       
-        const flag=addressvalidation(values,setError)
-        if(flag)
-        {
-          axios.post('http://localhost:5000/useraddress',values)
-          .then(res=>{
-           if(res.data.status=='Success')
-           {
-            notifysuccess(toast,'successfully Updated');
-            setcount(prev=>prev+1);
-           }
-           else{
-            notifyerror(toast,'Your address is already present in our database');
-
-           }
-          }).catch(e=>{
-    
-         console.log(e.message)
-          })         
+      
+        const flag =await addressvalidation(values, setError);
+         console.log('hello chandu',flag)
+        if (flag) {
+          axios.post('http://localhost:5000/useraddress', values)
+            .then(res => {
+              if (res.data.status === 'Success') {
+                notifysuccess(toast, 'Successfully Updated');
+                setcount(prev => prev + 1);
+              } else {
+                notifyerror(toast, 'Your address is already present in our database');
+              }
+            })
+            .catch(e => {
+              console.log(e.message);
+              notifyerror(toast, 'Error updating address');
+            });
+        } else {
+          // Move the console.log statement inside the else block
+          console.log("error is the ", error);
+          notifyerror(toast, error);
         }
-        else{
-          console.log(error || 'hello')
-          notifyerror(toast,error)
-        }
-        // adduseraddress(values)
-      }
+      };
+      
       const changeHandler1 = (value) => {
         setValues({ ...values, state: value[0] });
       };
     return (
         <div className='id'>
-         {count<0 &&
+      
         <React.Fragment>
         <h3>Manage Address</h3>
         <p
@@ -162,7 +160,7 @@ export default function AddUserAddress() {
             </button>
           </React.Fragment>
         )}
-        </React.Fragment>}
+        </React.Fragment>
         <UserAddress setValues={setValues} count={count} />
 
           <ToastContainer/>

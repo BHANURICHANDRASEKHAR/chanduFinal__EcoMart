@@ -3,9 +3,10 @@ const fruits=[
     {id:1,
       "name" : "Apple",
       "image" : "https://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c112.png",
-        "img1":'https://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c113.png',
-        "img2":'https://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c117.png',
-        "img3":"https://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c113.png",
+        "img1":'https://w7.pngwing.com/pngs/319/218/png-transparent-sliced-apple-with-leaf-apple-juice-green-purxe9e-apple-natural-foods-food-green-apple-thumbnail.png',
+
+        "img2":'https://w7.pngwing.com/pngs/769/850/png-transparent-green-apple-juice-apple-pie-flavor-concentrate-green-apple-slice-natural-foods-food-tart-thumbnail.png',
+        "img3":"https://w7.pngwing.com/pngs/265/75/png-transparent-ipod-touch-apple-icon-format-icon-large-red-apples-closeup-of-red-apples-natural-foods-food-eating-thumbnail.png",
       "price" :60
     },
     { id:2,
