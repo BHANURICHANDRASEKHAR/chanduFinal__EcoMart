@@ -10,7 +10,6 @@ const randomIndex = Math.floor(Math.random() * 5);
           data.push(items)
         }
     });
-  console.log('related data is the',data)
   return (
    <div className='container'><p style={{fontWeight:'600'}}>You may also Know...</p>
    <div className='relatedproductparent'>

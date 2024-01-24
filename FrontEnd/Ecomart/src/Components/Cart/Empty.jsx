@@ -23,8 +23,7 @@ export default function Empty() {
         />
         <h2>Your Cart is Empty!</h2>
         <p>Add items to it now.</p>
-      </div>
-      <Link
+        <Link
         to="/shop"
         style={{
           display: 'flex',
@@ -43,6 +42,8 @@ export default function Empty() {
           &ensp; Back to Shop
         </button>
       </Link>
+      </div>
+
     </div>
   );
 }

@@ -3,8 +3,14 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import { getcookie } from '../../../fetchfunction';
 import { toast } from 'react-toastify';
+import { useDispatch,useSelector } from 'react-redux';
+
+import { ReviewActions } from '../../../Redux-store/review';
 import { notifysuccess } from '../../../tostisy';
 function useReview() {
+  const data = useSelector((state) => state.reviewslice);
+
+  const dispatch=useDispatch();
   const navigate=useNavigate();
   function Addreviewtodatabase(data){
    
@@ -32,7 +38,8 @@ function useReview() {
   axios.get(`http://localhost:5000/reviews/get?id=${id}`)
     .then((res) => {
       if (res.data.status === 'Success') {
-        return res.data.data;
+        console.log(res.data.data)
+        dispatch(ReviewActions.addreview(res.data.data))
       } else {
         throw new Error('Failed to fetch reviews');
       }
@@ -42,7 +49,7 @@ function useReview() {
       throw error;
     });
 }
-  return [Addreviewtodatabase,fetchReviews];
+  return [Addreviewtodatabase,fetchReviews,data];
 }
 
 export default useReview

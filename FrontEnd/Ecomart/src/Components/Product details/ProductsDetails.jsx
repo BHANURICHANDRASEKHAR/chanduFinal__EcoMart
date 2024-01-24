@@ -8,15 +8,15 @@ import Images from './Images';
 import ProductDecription from './ProductDecription';
 import CustomerReview from './CustomerReview';
 import AddReview from './AddReview';
-console.log(rawdata)
+import { useSelector } from 'react-redux'; // use selector
 export default function ProductsDetails() {
 const {id}=useParams()
 const [itemdata,setitemdata]=useState([]);
 
 useEffect(()=>{
+  console.log('parent page render')
 
   const cuurentitem=rawdata.filter((items)=>items.id==id)
-  console.log(cuurentitem)
    setitemdata(cuurentitem[0])
 },[id]);
   return (
@@ -27,7 +27,7 @@ useEffect(()=>{
   <div className='child'><RelatedProducts/></div>
   </div><hr/>
   <ProductDecription/>
-  <CustomerReview/>
+  <CustomerReview />
   <AddReview items={itemdata}/>
   </div>
   )

@@ -37,6 +37,7 @@ module.exports=router
 function fetchcartdata(email,productdata)
 {
     var productdata=productdata[0]
+    console.log(productdata)
     const query1='select * from ecomartcart where email=(?) && id=(?)'
     connector.query(query1,[email,productdata.id],(err,data)=>{
         if(err) throw err;

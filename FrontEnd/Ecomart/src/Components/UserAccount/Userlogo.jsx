@@ -7,9 +7,13 @@ export default function Userlogo() {
   return (
 <React.Fragment>
 <div className='d-flex' style={{background:'white',borderRadius:'5px',marginBottom:'10px'}}>
-<Avatar size={50} src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/profile-pic-male_4811a1.svg' className='m-3'/>
+<div className='m-3'><LogoAvatar size='50' /></div>
 <p className='mt-3' style={{marginLeft:'10px'}}><b> Hello {username}<br/>Welcome to Ecomart</b></p>
 <br/>
 </div>
 </React.Fragment>  )
+}
+export const LogoAvatar=({size})=>{
+  return(<Avatar size={size} src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/profile-pic-male_4811a1.svg' />
+  )
 }

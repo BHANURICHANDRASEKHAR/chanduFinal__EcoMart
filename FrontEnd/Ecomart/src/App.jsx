@@ -12,7 +12,7 @@ export default function App() {
   if(!token)
   {
     console.log('logout function toen is not found')
-   dispatch(AuthActions.logout())
+  
   }
   else{
     console.log('login funcion')

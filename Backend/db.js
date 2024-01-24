@@ -1,9 +1,9 @@
 const sql=require('mysql')
 const connetor=sql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'',
-    database:'ecomart_users'
+    host:'sql6.freemysqlhosting.net',
+    user:'sql6679420',
+    password:'1y1UCHlfzI',
+    database:'sql6679420'
 })
 connetor.connect((err)=>{
    if(err) throw err;
