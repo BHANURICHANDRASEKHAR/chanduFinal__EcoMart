@@ -11,6 +11,7 @@ const cartdata=useSelector(state=>state.cartslice);
 const navigate=useNavigate();
 
   function addItems(data) {
+    console.log('hello data is the',data)
     const [id,productname,price,productimg]=data;
   const data1=[{
     productimg:productimg,

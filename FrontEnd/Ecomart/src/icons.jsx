@@ -18,6 +18,8 @@ import sc from './assets/imgs/skrill.png'
 import pp from './assets/imgs/phonepe.png'
 import payp from './assets/imgs/paypal.png'
 import logo  from './assets/imgs/logo1.png'
+import { FaHeartBroken } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 const reacticons={
     shop:FaShopify,
     login:RiLoginCircleFill,
@@ -33,6 +35,8 @@ const reacticons={
     facebook:BsFacebook,
     github:FaGithub,
     linkedin:BiLogoLinkedin,
+    heartbroken:FaHeartBroken,
+    heart:FaHeart
 }
 export const images={
   mc:mc,

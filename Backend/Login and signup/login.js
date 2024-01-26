@@ -19,6 +19,7 @@ router.post('/login', async (req, res) => {
     const haspassword = currentdata.password;
     const textpassword = data.password;
     const passswordcompare = await bcrypt.compare(textpassword, haspassword);
+    
     if (passswordcompare) {
       const token = signjwt(currentdata);
 

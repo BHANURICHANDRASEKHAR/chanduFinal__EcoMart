@@ -49,7 +49,7 @@ fetchReviews(items.id)
   }
   }
   return (
-    <div style={{width:'70%',background:'#eeeeee'}} className='mt-4 p-4'>
+    <div style={{width:'70%',background:'#eeeeee',height:'570px'}} className='mt-4  p-4'>
     <h5>Add A Review</h5>
     <p>Review now to get coupon!<br></br>
     Your email address will not be published. Required fields are marked <span style={{color:'red'}}>*</span></p>
@@ -69,9 +69,10 @@ fetchReviews(items.id)
  <div className='mt-3'>
  <input type='checkbox' name='checkbox' ref={checkbox} />&ensp;
  <label htmlFor='Name'>  Save my name, email, and website in this browser for the next time I comment.</label>
- <button style={{float:'right'}} onClick={submit}>Submit</button>
 
+ <button style={{float:'right'}} onClick={submit}>Submit</button>
 </div>
+
     </div>
   )
 }

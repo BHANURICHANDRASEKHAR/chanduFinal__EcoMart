@@ -38,7 +38,7 @@ const [msg,setError]=useState()
         {
           Cookies.set('user',res.data.token)
           notifysuccess(toast,res.data.msg)
-          console.log(res)
+          
           dispatch(AuthActions.login());
            navigate('/')
         }

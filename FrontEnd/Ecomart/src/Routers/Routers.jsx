@@ -5,6 +5,7 @@ import Signup from '../Components/Home/login/Signup'
 import Account from '../Components/UserAccount/Account'
 import { Route,Routes } from 'react-router-dom'
 import NavBars from './NavBars'
+import useAuth from '../Components/customs hooks/useAuth'
 import Workingonit from '../Components/UserAccount/Workingonit'
 import Footer from '../Components/Footer'
 import NoPageFound from '../Components/NoPageFound'
@@ -15,10 +16,12 @@ import { useSelector } from 'react-redux'
 import { AuthActions } from '../../Redux-store/Centralstore/reduers'
 const Shop=React.lazy(()=>import('../Components/shop/Shop'))
 const Cart=React.lazy(()=>import('../Components/Cart/Cart'))
+import Wishlist from '../Components/UserAccount/WishList/Wishlist' //user Wishlist
 const ProductsDetails=React.lazy(()=>import('../Components/Product details/ProductsDetails'))
 import Loading from '../Components/Loading'
 export default function Routers() {
- 
+  const [auth,logout]=useAuth();
+
   return (
    <React.Fragment>
    <NavBars/>
@@ -32,7 +35,7 @@ export default function Routers() {
    <Route path='cuppons' element={<Workingonit/>}/>
    <Route path='review' element={<Workingonit/>}/>
    <Route path='notifications' element={<Workingonit/>}/>
-   <Route path='wishlist' element={<Workingonit/>}/>
+   <Route path='wishlist' element={<Wishlist/>}/>
 
    </Route>
    <Route path='/usercart' element={<React.Suspense fallback={<Loading/>}><Cart/></React.Suspense>}/>
@@ -43,7 +46,7 @@ export default function Routers() {
     <Route path='/productdetails/:id' element={<React.Suspense fallback={<Loading/>}><ProductsDetails/></React.Suspense>}/>
    <Route path='*' element={<NoPageFound status='404' title='404' subtitle="Sorry, the page you visited does not exist."/>}/>
    </Routes>
-   
+   {auth &&<Footer/>}
    </React.Fragment>
   )
 }

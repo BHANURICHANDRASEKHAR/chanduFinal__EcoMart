@@ -44,6 +44,7 @@ p{
     height: 20px;
     width: 40px;
     float: right;
+    animation: 5s ease-in-out;
 }
 .relatedproductparent{
     display: grid;

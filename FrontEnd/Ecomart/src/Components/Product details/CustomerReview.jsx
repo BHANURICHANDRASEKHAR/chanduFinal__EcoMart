@@ -9,7 +9,6 @@ data.ratingslist.map((i)=>{
   const {rating}=i;
   userrating.push(rating)
 })
-console.log(userrating)
   return (
     <React.Fragment>
       <h4>Customers Reviews</h4>
@@ -20,7 +19,7 @@ console.log(userrating)
         </div>
         <div className='reviewchild'>
          {[5,4,3,2,1].map((index)=>{
-          return(<div >{index} star<Progress percent={30} /></div>)
+          return(<div  key={index}>{index} star<Progress percent={30} /></div>)
          
          })}
         </div>
@@ -30,7 +29,7 @@ console.log(userrating)
 };
 
 const Review = ({ reviewdata }) => {
-  console.log(reviewdata);
+ 
   const [reviewstate, setReviewState] = useState(false);
   useEffect(() => {
     if (reviewdata.length > 0 && !reviewstate) {

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import reacticons from '../../icons';
+import img from '../../assets/imgs/emptycart.jpg'
 export default function Empty() {
   return (
     <div>
@@ -17,7 +18,7 @@ export default function Empty() {
         data-aos-easing="ease-in-out"
       >
         <img
-          src="https://rukminim2.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+          src={img}
           style={{ width: '300px', height: '200px', objectFit: 'contain' }}
           alt="Empty Cart"
         />

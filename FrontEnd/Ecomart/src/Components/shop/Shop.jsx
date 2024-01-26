@@ -38,61 +38,9 @@ const [addItems]=useFunction();
   function newsetdata(data1) {
     setgroupdata(data1);
   }
- const addToCart = (id, productname, price, productimg) => {
-  addItems([id,productname,price,productimg])
-    // event.preventDefault();
-    //   const values = [
-    //     {
-
-    //       id: id,
-    //       productname: productname,
-    //       price: price,
-    //       productimg: productimg,
-        
-    //     },
-
-    //   ];
-    //   const token=getcookie();
-    //   if(token)
-    //   {
-    //     axios.post('http://localhost:5000/addtocart',values,{
-    //       headers: { 'x-token': token }
-    //     })
-  
-    //     .then((res)=>{
-    //       if(res.data.status=='Success')
-    //       {  
-    //         dispatch(cartActions.addtocart(res.data.data))
-  
-    //       }
-    //     })
-    //  .catch((e)=>{
-    //   console.log(e.message)
-    //  })
-    //   }
-    //   else{
-    //     navigate('/login')
-    //   }
-     
+ function addToCart (id, productname, price, productimg) {
+   addItems([id,productname,price,productimg])
     }
-//       axios
-//         .post('http://localhost:8082/addtocart', values)
-//         .then((res) => {
-//           if (res.data.status === 'Success') {
-//             const userdata = res.data.data1;
-//             setcartcount(userdata.length);
-//             localStorage.setItem('itemscount', userdata.length);
-//             localStorage.setItem('cartstatus', true);
-//             localStorage.setItem('cartdata', JSON.stringify(userdata));
-//           }
-//         })
-//         .catch((err) => {
-//           console.log('unsuccess', err);
-//         });
-//     } else {
-//       navigate('/login');
-//     }
-//   };
 
   return (
     <div className='container-fluid'>
@@ -101,42 +49,8 @@ const [addItems]=useFunction();
         <div className='col'>
           <div className='main-grid'>
             {groupdata.map((e,index) => {
-              const { id, image, name, price } = e;
-            const data=JSON.stringify(e)
-
               return (
-             
-                <Card style={{ width: 'auto',height:'370px' }}  key={index}
-                data-aos='fade-up'
-                data-aos-duration='900'
-                data-aos-delay=''
-                data-aos-easing='ease-in-out'>
-                <Card.Img variant="top" src={image} />
-          <Card.Body>
-       
-          <Link to={`/productdetails/${e.id}`} style={{textDecoration: 'none', color: 'inherit'}}>
-          
-           <div style={{marginLeft:'15px'}}>
-           <Card.Title><b>{name}</b></Card.Title>
-           <Card.Text>
-             <Rating /> <span style={{ margin: '3px' }}>6</span>
-             <br />
-             <b style={{ marginTop: '10px' }}>Price: {price}</b>
-           </Card.Text></div>
-           </Link>
-            <button
-            
-              style={{width:'auto'}}
-              onClick={(event) => {
-                addToCart(id,name, price, image);
-              }}
-            >
-              <reacticons.shopingcart style={{ margin: '10px' }} />
-              Add to Cart
-            </button>
-          </Card.Body>
-         
-        </Card>
+             <Cartdata key={index} e={e} addToCart={addToCart}/>
               );
             })}
           </div>
@@ -147,4 +61,40 @@ const [addItems]=useFunction();
 
     </div>
   );
+}
+export const Cartdata=({e,addToCart})=>{
+  const { id, image, name, price } = e;
+  return(
+    <Card style={{ width: 'auto',height:'370px' }}  
+    data-aos='fade-up'
+    data-aos-duration='900'
+    data-aos-delay=''
+    data-aos-easing='ease-in-out'>
+    <Card.Img variant="top" src={image} />
+  <Card.Body>
+  
+  <Link to={`/productdetails/${e.id}`} style={{textDecoration: 'none', color: 'inherit'}}>
+  
+  <div style={{marginLeft:'15px'}}>
+  <Card.Title><b>{name}</b></Card.Title>
+  <Card.Text>
+  <Rating /> <span style={{ margin: '3px' }}>5</span>
+  <br />
+  <b style={{ marginTop: '10px' }}>Price: {price}</b>
+  </Card.Text></div>
+  </Link>
+  <button
+  
+  style={{width:'auto'}}
+  onClick={(event) => {
+    addToCart(id,name, price, image);
+  }}
+  >
+  <reacticons.shopingcart style={{ margin: '10px' }} />
+  Add to Cart
+  </button>
+  </Card.Body>
+  
+  </Card>
+  )
 }

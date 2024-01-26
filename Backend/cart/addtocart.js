@@ -5,7 +5,7 @@ require('dotenv').config()
 const router=express.Router();
 
 router.post('/addtocart',async (req,res)=>{ 
-   
+     console.log("http://localhost:5173/",req.body)
     var token = req.header('x-token');
     try {
       if (!token) {
@@ -37,11 +37,11 @@ module.exports=router
 function fetchcartdata(email,productdata)
 {
     var productdata=productdata[0]
-    console.log(productdata)
+
     const query1='select * from ecomartcart where email=(?) && id=(?)'
     connector.query(query1,[email,productdata.id],(err,data)=>{
         if(err) throw err;
-        if(data.length==0)
+        if(data.length==0)  
         {
             const query2='insert into ecomartcart values(?,?,?,?,?,?)';
             connector.query(query2,[email,productdata.id,productdata.productname,productdata.price,productdata.productimg,1],(err,data)=>{

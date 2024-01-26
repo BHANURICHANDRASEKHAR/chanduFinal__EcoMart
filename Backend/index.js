@@ -14,6 +14,7 @@ const useraddress=require('./Useraccount/useraddress')
 const getuseraddress=require('./Useraccount/getuseraddress')
 const deleteuseraddress=require('./Useraccount/deleteuseraddress')
 const reviewrouter=require('./UserReview/review')
+const wishlistrouter=require('./wishlist/wishlist') //router for wishlist
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
 app.use(
@@ -37,6 +38,7 @@ app.use(useraddress)
 app.use(getuseraddress)
 app.use(deleteuseraddress)
 app.use('/reviews',reviewrouter)
+app.use('/wishlist',wishlistrouter)
 app.listen(5000,()=>{
     console.log(`app is ruuning`)
 })

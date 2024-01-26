@@ -7,7 +7,6 @@ import reacticons from '../icons';
 import useAuth from '../Components/customs hooks/useAuth';
 export default function NavBars() {
   const [auth,logout]=useAuth();
-  console.log('nav bar auth',auth)
   return (
     <React.Fragment>
       <div className="container">

@@ -38,7 +38,7 @@ function useReview() {
   axios.get(`http://localhost:5000/reviews/get?id=${id}`)
     .then((res) => {
       if (res.data.status === 'Success') {
-        console.log(res.data.data)
+     
         dispatch(ReviewActions.addreview(res.data.data))
       } else {
         throw new Error('Failed to fetch reviews');

@@ -255,7 +255,7 @@ button{
   }
   .card {
     border-radius: 0.7rem;
-      transition: 0.3s;
+    transition: 0.3s;
     background-color: #fff;
     cursor: pointer;
     width: 100%;

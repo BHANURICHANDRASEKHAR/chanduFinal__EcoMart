@@ -15,12 +15,11 @@ const [itemdata,setitemdata]=useState([]);
 
 useEffect(()=>{
   console.log('parent page render')
-
   const cuurentitem=rawdata.filter((items)=>items.id==id)
    setitemdata(cuurentitem[0])
 },[id]);
   return (
-  <div className='container mt-4 bg-light'>
+  <div className='container-fluid m-4 bg-light'>
   <div className='parent'>
   <div className='child'><Images items={itemdata}/></div>
   <div className='child'><DeepDetails items={itemdata}/></div>
