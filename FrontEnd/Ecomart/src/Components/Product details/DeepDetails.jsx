@@ -4,6 +4,7 @@ import useWishlist from '../customs hooks/useWishlist';
 import reacticons from '../../icons';
 import { FaHeart } from "react-icons/fa";
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 export default function DeepDetails({items}) {
   const {id,name, price, image}=items;
   const [addItems]=useFunction();
@@ -14,7 +15,7 @@ export default function DeepDetails({items}) {
     <p>
     Availability:<b style={{color:'green'}}>100 in Stock</b></p>
   <div className='d-grid place-items-center m-4'>  <button onClick={()=>{addItems([id,name, price, image])}}>Add To Cart</button>
-  <button style={{backgroundColor:'#ffb240',color:'black'}} >Buy Now</button></div>
+  <Link to={`/payment/${id}`}><button style={{backgroundColor:'#ffb240',color:'black'}} >Buy Now</button></Link></div>
    </div>
 
   )
@@ -31,11 +32,11 @@ export default function DeepDetails({items}) {
 
     if(presentdata)
     {
-      console.log('data is present',presentdata)
+      
      setwishlist(presentdata.status)
     }
     else{
-      console.log('data is absent',presentdata)
+     
 
       setwishlist(false)
     }

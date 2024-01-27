@@ -24,3 +24,16 @@
     height: 20px;
     width: 20x;
 }
+.address-parent{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 7fr 1fr;
+}
+.address-child:last-child{
+    display: flex;
+    align-self: center; 
+}
+.address-child svg{
+    height: 30px;
+    width: 50px;
+}

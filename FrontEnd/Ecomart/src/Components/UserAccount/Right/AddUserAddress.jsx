@@ -161,8 +161,7 @@ export default function AddUserAddress() {
           </React.Fragment>
         )}
         </React.Fragment>
-        <UserAddress setValues={setValues} count={count} />
-
+        <UserAddress  count={count} />
           <ToastContainer/>
         </div>
       );

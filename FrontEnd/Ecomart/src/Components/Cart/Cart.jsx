@@ -17,7 +17,7 @@ useEffect(()=>{
 })
   return (
 
-<div className='container '>
+<div className='container-fluid m-3 '>
 {emptyCart ? <Empty /> 
 : 
 <div className='row w-100 mt-5'> <Cart1 /></div>

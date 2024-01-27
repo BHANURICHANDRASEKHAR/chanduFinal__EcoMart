@@ -56,7 +56,7 @@ const Overall = () => {
         {data.map((e) => {
           const { id, img, name } = e;
           return (
-            <Link key={id} to={`/data/${name}`} value={name}>
+            <Link key={id} to='/shop' value={name}>
               <div className='grid-item1 cards--two'>
                 <img src={img} alt={name} />
                 <span className="cards--two__rect"></span>

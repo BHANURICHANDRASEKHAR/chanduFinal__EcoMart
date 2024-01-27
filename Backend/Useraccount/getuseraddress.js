@@ -9,7 +9,7 @@ router.get('/getuseraddress',(req,res)=>{
      const payload=  jwt.verify(token,process.env.jwt_secretekey);
      const query1='select * from users_address where mail=(?)'
      connecter.query(query1,[payload.email],(err,data)=>{
-        if(err) throw err;
+        if(err) console.log(err.message);
         res.status(200).json({status:'Success',data:data})
      })
     }

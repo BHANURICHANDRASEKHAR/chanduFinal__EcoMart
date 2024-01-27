@@ -9,8 +9,7 @@ function UserAddress(pro) {
   const [getUserAddress, removeUserAddress, addresslist] = useAdress();
   const [flag, setFlag] = useState(true);
   const useraddressdata=useSelector((state)=>state.useraddressslice.userAddressList);
-
-
+  console.log('address list is the',addresslist)
   useEffect(() => {
     console.log('page rendered and data is the',useraddressdata);
     getUserAddress();
@@ -20,11 +19,7 @@ function UserAddress(pro) {
   const addressDelete = (address) => {
     removeUserAddress(address)
   };
-  function recheck(data)
-  {
-    
-    pro.setValues(data)
-  }
+ 
   return (
     <React.Fragment>
       <div className='container'>
@@ -32,29 +27,30 @@ function UserAddress(pro) {
           useraddressdata.map((address1,index) => {
             const { name, number, addtype, pincode, city, state, address: userAddress, locality } = address1;
             return (
-              <div key={index} className='row' style={{ border: '1px solid #D3D3D3', padding: '10px', marginBottom: '5px' }}>
-
-            <button style={buttonStyle} onClick={()=>recheck(address1)}> {addtype}</button>
-                <br />
-                <div>
-                  <h4>
-                    {name}&ensp;{number}
-                  </h4>
-                </div>
-                <div>
-                  {locality || ''}&ensp;{userAddress}&ensp;{city}&ensp;{state}-{pincode}
-                </div>
-                <Popconfirm
-                title="Delete the Item"
-                description="Are you sure to delete this address?"
-                style={{width:'100px'}}
-                onConfirm={()=>addressDelete(address1)}
-                okText="Yes"
-                cancelText="No"
-                placement="leftBottom">
-                <reacticons.delete style={{ height: '50px', width: '50px', position: 'absolute', right: '13%', marginTop: '30px', cursor: 'pointer' }}/>
-                 </Popconfirm>
-              </div>
+             <div className='row' key={index} > <div  className='address-parent' style={{padding: '10px', marginBottom: '5px' }}>
+             <div className='address-child'>
+             <button style={buttonStyle} > {addtype}</button>
+             <br />
+             <div>
+               <h4>
+                 {name}&ensp;{number}
+               </h4>
+             </div>
+             <div>
+               {locality || ''}&ensp;{userAddress}&ensp;{city}&ensp;{state}-{pincode}
+             </div>
+           </div>
+            <div className='address-child'>   <Popconfirm
+            title="Delete the Item"
+            description="Are you sure to delete this address?"
+            style={{width:'100px'}}
+            onConfirm={()=>addressDelete(address1)}
+            okText="Yes"
+            cancelText="No"
+            placement="leftBottom">
+            <reacticons.delete />
+             </Popconfirm></div>
+             </div></div>
             );
           })
         ) : (

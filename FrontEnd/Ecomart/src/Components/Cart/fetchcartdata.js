@@ -1,8 +1,7 @@
 import axios from "axios";
 import { getcookie } from "../../../fetchfunction";
-import { useNavigate } from "react-router-dom";
 import {notifyerror} from '../../../tostisy'
-import { ToastContainer,toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { cartActions } from "../../../Redux-store/Centralstore/cart-slice";
 export default function fetchcartdatafromdatabase(dispatch,navigate) {
     const token = getcookie();

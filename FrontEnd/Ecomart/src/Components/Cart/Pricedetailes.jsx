@@ -3,7 +3,7 @@ import './cart.css'
 import { Link } from 'react-router-dom'
 export default function Pricedetailes(pro) {
  return(
-    <div className='pricecard mt-1 mr-1 '>
+    <div className='pricecard '>
     <h3 style={{ marginBottom: '0px' }}>Cart Totals</h3>
     <table>
       <tr>

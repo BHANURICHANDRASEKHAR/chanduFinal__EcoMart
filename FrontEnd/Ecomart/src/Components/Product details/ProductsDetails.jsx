@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import rawdata from '../../../data/testdata'
-import { useParams,useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import DeepDetails from './DeepDetails';
 import RelatedProducts from './RelatedProducts';
 import './productdetails.css';
@@ -14,9 +14,9 @@ const {id}=useParams()
 const [itemdata,setitemdata]=useState([]);
 
 useEffect(()=>{
-  console.log('parent page render')
   const cuurentitem=rawdata.filter((items)=>items.id==id)
-   setitemdata(cuurentitem[0])
+  
+       setitemdata(cuurentitem[0])
 },[id]);
   return (
   <div className='container-fluid m-4 bg-light'>

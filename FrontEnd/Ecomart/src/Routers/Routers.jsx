@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React from 'react'
 import Home from '../Components/Home/Home'
 import Login from '../Components/Home/login/Login'
 import Signup from '../Components/Home/login/Signup'
@@ -19,6 +19,8 @@ const Cart=React.lazy(()=>import('../Components/Cart/Cart'))
 import Wishlist from '../Components/UserAccount/WishList/Wishlist' //user Wishlist
 const ProductsDetails=React.lazy(()=>import('../Components/Product details/ProductsDetails'))
 import Loading from '../Components/Loading'
+import PaymentMain from '../Components/PaymentPages/PaymentMain'
+import OrderPlaced from '../Components/PaymentPages/OrderPlaced'
 export default function Routers() {
   const [auth,logout]=useAuth();
 
@@ -43,9 +45,13 @@ export default function Routers() {
    <Route path='/login' element={<Login/>}/>
    
    <Route path='/signup' element={<Signup/>}/>
+
     <Route path='/productdetails/:id' element={<React.Suspense fallback={<Loading/>}><ProductsDetails/></React.Suspense>}/>
+    <Route path='/orderplaced' element={<OrderPlaced/>}/>
+    <Route path='/payment/:id' element={<PaymentMain/>}/>
    <Route path='*' element={<NoPageFound status='404' title='404' subtitle="Sorry, the page you visited does not exist."/>}/>
    </Routes>
+
    {auth &&<Footer/>}
    </React.Fragment>
   )
