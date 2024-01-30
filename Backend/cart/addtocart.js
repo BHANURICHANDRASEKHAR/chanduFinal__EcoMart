@@ -5,7 +5,7 @@ require('dotenv').config()
 const router=express.Router();
 
 router.post('/addtocart',async (req,res)=>{ 
-     console.log("http://localhost:5173/",req.body)
+     
     var token = req.header('x-token');
     try {
       if (!token) {

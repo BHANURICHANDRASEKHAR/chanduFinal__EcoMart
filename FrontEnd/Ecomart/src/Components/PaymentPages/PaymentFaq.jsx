@@ -16,7 +16,7 @@ function PaymentFaq({itemdata}) {
     )
     const Item3=(
         <div  className='container'>
-        <PaymentOptions/>
+        <PaymentOptions itemdata={itemdata}/>
        </div>
     )
     const data= [

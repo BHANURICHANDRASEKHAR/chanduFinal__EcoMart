@@ -20,7 +20,7 @@ app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
 app.use(
     cors({
-      origin: 'http://localhost:5173',
+      origin: ['http://localhost:5173'],
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
       exposedHeaders: ['Content-Type', 'Authorization', 'XMLHttpRequest'],
       credentials: true, // Allow credentials
@@ -40,7 +40,7 @@ app.use(getuseraddress)
 app.use(deleteuseraddress)
 app.use('/reviews',reviewrouter)
 app.use('/wishlist',wishlistrouter)
-app.use('/payment',paymentrouter)
+app.use('/payment',paymentrouter),
 app.listen(5000,()=>{
     console.log(`app is ruuning`)
 })

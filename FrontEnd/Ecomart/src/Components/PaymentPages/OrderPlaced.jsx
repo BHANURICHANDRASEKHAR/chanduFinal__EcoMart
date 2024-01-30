@@ -1,6 +1,12 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import getorderdata from './getorders'
 function OrderPlaced() {
+  const id=useParams();
+  useEffect(()=>{
+  const data=getorderdata(id.order_id);
+  console.log(data)
+  },[])
   return (
   <div>
   <div className='container m-5 p-5 d-flex order-img'>

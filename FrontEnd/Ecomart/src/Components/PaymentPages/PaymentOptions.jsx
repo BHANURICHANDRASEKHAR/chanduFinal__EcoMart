@@ -1,11 +1,11 @@
-import axios from 'axios';
+import React, { useState } from 'react';
+import pay from './pay';
 import { useNavigate } from 'react-router-dom';
-import React, { useRef, useState } from 'react';
 import Capcha from './Capch';
-function PaymentOptions() {
+function PaymentOptions({itemdata}) {
+  const navigate=useNavigate();
   const [cuurentstate,setcurrentstate] = useState('')
   const [catcha,setcaptha]=useState(false);
- const navigate=useNavigate()
   function set(e) {
     setcurrentstate(e.target.value);
     if(e.target.value == 'Cash On Delivery')
@@ -14,15 +14,6 @@ function PaymentOptions() {
         setcaptha(prev=>!prev)
     }
     else{setcaptha(false)}
-  }
-  function pay() {
-   if(cuurentstate == 'Pay Online')
-   {
-    axios.post('http://localhost:5000/payment')
-   }
-   else{
-    navigate('/orderplaced')
-   }
   }
 
   return (
@@ -34,7 +25,7 @@ function PaymentOptions() {
       <div className='mt-4 p-2'>
         <input type='radio' name='radio' value='Pay Online' onChange={set} />&ensp;Pay Online
       </div>
-     {catcha ? <Capcha pay={pay}/>:<button  onClick={pay} >Place Order</button>}
+     {catcha ? <Capcha pay={pay} cuurentstate={cuurentstate} itemdata={itemdata} navigate={navigate}/>:<button  onClick={()=>pay(cuurentstate,itemdata,navigate)} >Place Order</button>}
     </div>
   );
 }

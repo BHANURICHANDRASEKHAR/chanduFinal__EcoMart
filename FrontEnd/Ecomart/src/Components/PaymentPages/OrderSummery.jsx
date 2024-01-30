@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+
 function OrderSummery({itemdata}) {
-  console.log(itemdata)
+
+
   const [date,setdate]=useState('')
   useEffect(()=>{
 const todaydate=new Date();

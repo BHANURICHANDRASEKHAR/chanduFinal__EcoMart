@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { notifyerror } from '../../../tostisy';
 import { toast } from 'react-toastify';
 
-export default function Capcha({pay}) {
+export default function Capcha({pay,cuurentstate,itemdata,navigate}) {
     const [input,setinput]=useState('')
     const [flag,setflag]=useState(false)
 useEffect(()=>{
@@ -42,7 +42,7 @@ function ChangeHandle(e)
  
             </div>
             {
-                flag &&  <button  onClick={pay} >Place Order</button>
+                flag &&  <button  onClick={()=>{pay(cuurentstate,itemdata,navigate)}} >Place Order</button>
 
             }
         </div>);

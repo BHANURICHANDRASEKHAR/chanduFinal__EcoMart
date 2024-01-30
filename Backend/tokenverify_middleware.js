@@ -2,12 +2,11 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 function tokenverify(req, res, next) {
-  console.log('hello');
+
   var token = req.header('x-token');
- 
   try {
     if (!token) {
-      console.log('hello');
+     
       return res.status(401).json({ message: 'Login is required' });
       
     }

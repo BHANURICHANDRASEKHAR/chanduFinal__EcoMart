@@ -5,11 +5,18 @@ function Cartbutton1({item}) {
     const {productname,quantity,price,productimg,id} = item;
 
   return (
-   <React.Fragment>
- <div className='cartbutton'>  <button style={{ width: '100px' }} onClick={() => {removeItems((id))}}>-</button><span>{quantity || 0}</span>
- <button style={{ width: '100px' }} onClick={() => {addItems(([id,productname,price,productimg])) }}>+</button></div>
-
-   </React.Fragment>
+    <React.Fragment>
+    <div className="prdct-qty-container ">
+    <button className='prdct-qty-btn' type='button' onClick={() => { removeItems(item) }}>
+     -
+    </button>
+    <input type="text" className='qty-input-box' value={quantity || 0} disabled name="" id="" />
+    <button className='prdct-qty-btn' type='button' onClick={() => { addItems([id, productname, price, productimg]) }}>
+     +
+    </button>
+  </div>
+ 
+    </React.Fragment>
   )
 }
 

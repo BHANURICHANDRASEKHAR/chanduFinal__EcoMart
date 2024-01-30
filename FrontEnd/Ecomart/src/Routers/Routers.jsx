@@ -47,7 +47,7 @@ export default function Routers() {
    <Route path='/signup' element={<Signup/>}/>
 
     <Route path='/productdetails/:id' element={<React.Suspense fallback={<Loading/>}><ProductsDetails/></React.Suspense>}/>
-    <Route path='/orderplaced' element={<OrderPlaced/>}/>
+    <Route path='/orderplaced/:order_id' element={<OrderPlaced/>}/>
     <Route path='/payment/:id' element={<PaymentMain/>}/>
    <Route path='*' element={<NoPageFound status='404' title='404' subtitle="Sorry, the page you visited does not exist."/>}/>
    </Routes>
