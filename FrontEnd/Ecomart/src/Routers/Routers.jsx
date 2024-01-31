@@ -24,10 +24,10 @@ import OrderPlaced from '../Components/PaymentPages/OrdersPages/OrderPlaced';
 import CancelReasons from '../Components/PaymentPages/OrdersPages/Cancel Orders/CancelReasons';
 import CancelSuccess from '../Components/PaymentPages/OrdersPages/Cancel Orders/CancelSuccess'
 import OrdersMain from '../Components/MyOrders/OrdersMain'
-import CancelOrders from '../Components/MyOrders/CancelOrders'
+import CancelOrder from '../Components/MyOrders/CancelOrder'
+import Reviews from '../Components/UserAccount/myreviews/Reviews'
 export default function Routers() {
   const [auth,logout]=useAuth();
-
   return (
    <React.Fragment>
    <NavBars/>
@@ -36,10 +36,10 @@ export default function Routers() {
    <Route path='/account' element={<Account/>}>
    <Route path='personalinformation' element={<UserInfo/>}/>
    <Route path='myorders' element={<OrdersMain/>}>
-   <Route path='cancel-orders' element={<CancelOrders/>}/></Route>
+   <Route path='cancel-orders' element={<CancelOrder/>}/></Route>
    <Route path='manageaddress' element={<AddUserAddress/>}/>
    <Route path='cuppons' element={<Workingonit/>}/>
-   <Route path='review' element={<Workingonit/>}/>
+   <Route path='review' element={<Reviews/>}/>
    <Route path='notifications' element={<Workingonit/>}/>
    <Route path='wishlist' element={<Wishlist/>}/>
 

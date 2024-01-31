@@ -15,12 +15,11 @@ data.ratingslist.map((i)=>{
 
       <div className='reviewparent'>
         <div className='reviewchild'>
-          <Review reviewdata={data.reviewlist} />
+          <ProductReviews reviewdata={data.reviewlist} />
         </div>
         <div className='reviewchild'>
          {[5,4,3,2,1].map((index)=>{
           return(<div  key={index}>{index} star<Progress percent={30} /></div>)
-         
          })}
         </div>
       </div>
@@ -28,8 +27,7 @@ data.ratingslist.map((i)=>{
   );
 };
 
-const Review = ({ reviewdata }) => {
- 
+export const ProductReviews = ({ reviewdata }) => {
   const [reviewstate, setReviewState] = useState(false);
   useEffect(() => {
     if (reviewdata.length > 0 && !reviewstate) {
@@ -59,7 +57,6 @@ const Review = ({ reviewdata }) => {
   );
 };
 
-export default CustomerReview;
 const UserRating=({rate})=>{
   const [rating, setRating] = useState(rate); 
 
@@ -78,3 +75,4 @@ const UserRating=({rate})=>{
   ))}</div>
   )
 }
+export default CustomerReview;

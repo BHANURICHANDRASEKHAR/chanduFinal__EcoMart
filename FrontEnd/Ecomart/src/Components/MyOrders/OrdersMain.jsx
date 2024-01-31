@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import Filters from './Filters'
-import Products from './Products'
+import Products from './Products';
+import {SearchItems} from './Products'
 import { useOutlet,Outlet } from 'react-router-dom'
 import './myorders.css'
 import myordersdata from './getmyorders'
@@ -16,7 +17,7 @@ export default function OrdersMain() {
   return (
     <div className='container-fluid mt-5 myorders-parent'>
     <Filters/>
-    {isOutletRendering ? null : <Products ordersdata={ordersdata}/>}
+    {isOutletRendering ? null : (productdata.length <= 0 ? <Noresult /> : <Products ordersdata={ordersdata} />)}
     <Outlet/>
     </div>
   )

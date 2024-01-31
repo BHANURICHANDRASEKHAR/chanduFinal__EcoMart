@@ -4,7 +4,7 @@ function Products({ordersdata}) {
  
   return (
     <div  className='myorders-child' >
-     <Search/>
+     <SearchItems/>
       <div>
       {
         ordersdata.map((items,index)=>{
@@ -17,7 +17,7 @@ function Products({ordersdata}) {
 }
 
 export default Products
-const Search=()=>{
+export const SearchItems=()=>{
   return( <div className="container d-flex align-items-center">
   <input type="search" className="search-box" placeholder="Search...for a Item"/>
   <button className="btn btn-outline-success mb-4">Search</button>

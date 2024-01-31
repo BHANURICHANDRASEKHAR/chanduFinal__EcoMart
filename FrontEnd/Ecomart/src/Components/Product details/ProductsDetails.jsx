@@ -8,7 +8,6 @@ import Images from './Images';
 import ProductDecription from './ProductDecription';
 import CustomerReview from './CustomerReview';
 import AddReview from './AddReview';
-import { useSelector } from 'react-redux'; // use selector
 export default function ProductsDetails() {
 const {id}=useParams()
 const [itemdata,setitemdata]=useState([]);

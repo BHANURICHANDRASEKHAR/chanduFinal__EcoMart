@@ -16,7 +16,7 @@ export default function CancelSuccess() {
     <div className='container mt-5 p-3' style={{background:'white'}}><CancelOrders productdata={productdata}/></div>
   )
 }
-const CancelOrders=({productdata})=>{
+export const CancelOrders=({productdata})=>{
     const description=productdata.date
     return(
         <div className='container'>
