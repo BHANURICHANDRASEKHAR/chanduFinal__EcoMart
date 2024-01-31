@@ -2,8 +2,8 @@ import React from 'react'
 import reacticons from '../../../icons'
 import { Link } from 'react-router-dom'
 import { Steps } from 'antd'
-export default function ProductDetails({data}) {
-    const productdata=data.length >0 && data[0]
+export default function ProductDetails({productdata}) {
+    
   return (
     <div className='container rounded-2 mt-2 p-3'  style={{background:"white"}}>
     <div className='row'>

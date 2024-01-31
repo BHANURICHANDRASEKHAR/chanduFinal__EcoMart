@@ -23,6 +23,8 @@ import PaymentMain from '../Components/PaymentPages/PaymentMain'
 import OrderPlaced from '../Components/PaymentPages/OrdersPages/OrderPlaced';
 import CancelReasons from '../Components/PaymentPages/OrdersPages/Cancel Orders/CancelReasons';
 import CancelSuccess from '../Components/PaymentPages/OrdersPages/Cancel Orders/CancelSuccess'
+import OrdersMain from '../Components/MyOrders/OrdersMain'
+import CancelOrders from '../Components/MyOrders/CancelOrders'
 export default function Routers() {
   const [auth,logout]=useAuth();
 
@@ -33,8 +35,8 @@ export default function Routers() {
    <Route path='/' element={<Home/>}/>
    <Route path='/account' element={<Account/>}>
    <Route path='personalinformation' element={<UserInfo/>}/>
-   <Route path='myorders' element={<Workingonit/>}/>
-
+   <Route path='myorders' element={<OrdersMain/>}>
+   <Route path='cancel-orders' element={<CancelOrders/>}/></Route>
    <Route path='manageaddress' element={<AddUserAddress/>}/>
    <Route path='cuppons' element={<Workingonit/>}/>
    <Route path='review' element={<Workingonit/>}/>

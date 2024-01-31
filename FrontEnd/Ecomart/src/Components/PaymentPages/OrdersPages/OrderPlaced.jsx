@@ -15,11 +15,16 @@ function OrderPlaced() {
   }
   data();
   },[]);
+  
   return (
   <div className='container-fluid'>
 <Header data={orderdata[0]}/>
 <Address/>
-<ProductDetails data={orderdata}/>
+{
+  orderdata.map((items,index)=>{
+    return(<ProductDetails productdata={items} key={index}/>)
+  })
+}
   </div>
   )
 }

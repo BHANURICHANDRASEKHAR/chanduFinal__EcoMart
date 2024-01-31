@@ -27,7 +27,7 @@ router.get('/get',tokenverify,(req,res)=>{
     console.log(id)
     const email=req.user.email;
   
-    const selectquery=`select * from cancel_orders where email=(?) and id=(?)`;
+    const selectquery=`select * from cancel_orders where email=(?) and order_id=(?)`;
     try{
     db.query(selectquery,[email,id],(err,data)=>{
         if(err) console.log(err.message);

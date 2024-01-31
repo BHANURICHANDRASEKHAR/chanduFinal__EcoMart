@@ -17,6 +17,7 @@ const reviewrouter=require('./UserReview/review')
 const wishlistrouter=require('./wishlist/wishlist') //router for wishlist
 const paymentrouter=require('./Payment/payment')
 const cancelrouter=require('./Payment/cancel/cancelorders')
+const myodersrouter=require('./myorders/get')
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
 app.use(
@@ -43,6 +44,7 @@ app.use('/reviews',reviewrouter)
 app.use('/wishlist',wishlistrouter)
 app.use('/payment',paymentrouter),
 app.use('/orders',cancelrouter);
+app.use('/myorders',myodersrouter)
 app.listen(5000,()=>{
     console.log(`app is ruuning`)
 })

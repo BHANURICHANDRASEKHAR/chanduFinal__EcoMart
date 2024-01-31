@@ -11,7 +11,7 @@ const cartdata=useSelector(state=>state.cartslice);
 const navigate=useNavigate();
 
   function addItems(data) {
-    console.log('hello data is the',data)
+   
     const [id,productname,price,productimg]=data;
   const data1=[{
     productimg:productimg,
@@ -46,13 +46,11 @@ const navigate=useNavigate();
   }
   
   function removeItems(data) {
-   const data1={
-    id:data
-   }
+
    const token=getcookie();
    if(token)
    {
-    axios.post('http://localhost:5000/removetocart',data1,{
+    axios.post('http://localhost:5000/removetocart',data,{
       headers:{'x-token':token}
     })
     .then((res)=>{
