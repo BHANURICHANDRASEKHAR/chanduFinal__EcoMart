@@ -20,7 +20,9 @@ import Wishlist from '../Components/UserAccount/WishList/Wishlist' //user Wishli
 const ProductsDetails=React.lazy(()=>import('../Components/Product details/ProductsDetails'))
 import Loading from '../Components/Loading'
 import PaymentMain from '../Components/PaymentPages/PaymentMain'
-import OrderPlaced from '../Components/PaymentPages/OrderPlaced'
+import OrderPlaced from '../Components/PaymentPages/OrdersPages/OrderPlaced';
+import CancelReasons from '../Components/PaymentPages/OrdersPages/Cancel Orders/CancelReasons';
+import CancelSuccess from '../Components/PaymentPages/OrdersPages/Cancel Orders/CancelSuccess'
 export default function Routers() {
   const [auth,logout]=useAuth();
 
@@ -49,6 +51,8 @@ export default function Routers() {
     <Route path='/productdetails/:id' element={<React.Suspense fallback={<Loading/>}><ProductsDetails/></React.Suspense>}/>
     <Route path='/orderplaced/:order_id' element={<OrderPlaced/>}/>
     <Route path='/payment/:id' element={<PaymentMain/>}/>
+    <Route path='/cancel-order/:id' element={<CancelReasons/>}/>
+    <Route path='/order-Canceled/:id' element={<CancelSuccess/>}/>
    <Route path='*' element={<NoPageFound status='404' title='404' subtitle="Sorry, the page you visited does not exist."/>}/>
    </Routes>
 

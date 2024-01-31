@@ -14,12 +14,15 @@ import {BsFacebook,BsTwitter} from 'react-icons/bs'
 import {FaGithub} from 'react-icons/fa'
 import {BiLogoLinkedin} from 'react-icons/bi'
 import mc from './assets/imgs/mastercard.png'
+import orders from './assets/imgs/orders.jpg'
 import sc from './assets/imgs/skrill.png'
 import pp from './assets/imgs/phonepe.png'
 import payp from './assets/imgs/paypal.png'
 import logo  from './assets/imgs/logo1.png'
 import { FaHeartBroken } from "react-icons/fa";
+import { CiDeliveryTruck } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
+import { MdOutlineCancel } from "react-icons/md";
 const reacticons={
     shop:FaShopify,
     login:RiLoginCircleFill,
@@ -36,13 +39,17 @@ const reacticons={
     github:FaGithub,
     linkedin:BiLogoLinkedin,
     heartbroken:FaHeartBroken,
-    heart:FaHeart
+    heart:FaHeart,
+    delivary:CiDeliveryTruck,
+    cancel:MdOutlineCancel,
 }
 export const images={
   mc:mc,
   pp:pp,
   sc:sc,
   payp:payp,
-  logo:logo
+  logo:logo,
+  orders:orders,
+
 }
 export default  reacticons;

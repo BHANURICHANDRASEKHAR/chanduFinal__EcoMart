@@ -12,9 +12,9 @@ const razorpay = new Razorpay({
 });
 router.post('/create-order', async (req, res) => {
   const data = req.body[0];
-
+var price=data.price>1500 ?data.price:data.price+60;
   const options = {
-    amount: data.price * 100, // amount in paise (100 paise = 1 INR)
+    amount:price * 100, // amount in paise (100 paise = 1 INR)
     currency: 'INR',
     receipt: 'order_rcptid_11',
     payment_capture: 1,

@@ -59,7 +59,7 @@ async function pay(cuurentstate, itemdata, navigate) {
       console.log(e.message);
     }
   } else {
-    console.log(itemdata)
+      console.log('hello')
      
       axios.post('http://localhost:5000/payment/addcoddata', itemdata,{
         headers: {

@@ -59,7 +59,7 @@ color: inherit;
 .relatedproductchild img{
     width:30%;
     object-fit:contain;
-    
+    aspect-ratio: 3/2;
 }
 .reviewparent{
     display: grid;

@@ -9,9 +9,9 @@ function UserAddress(pro) {
   const [getUserAddress, removeUserAddress, addresslist] = useAdress();
   const [flag, setFlag] = useState(true);
   const useraddressdata=useSelector((state)=>state.useraddressslice.userAddressList);
-  console.log('address list is the',addresslist)
+ 
   useEffect(() => {
-    console.log('page rendered and data is the',useraddressdata);
+   
     getUserAddress();
    
   }, [pro.count]);
