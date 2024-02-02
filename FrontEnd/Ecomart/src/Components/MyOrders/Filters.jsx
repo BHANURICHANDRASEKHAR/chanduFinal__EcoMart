@@ -27,7 +27,7 @@ const navigate=useNavigate();
 
         filterslist.map((items,index)=>{
         return(
-            <div> <input type='checkbox' className='m-2' value={items} onChange={check} key={index}/> &ensp;{items}</div>
+            <div key={index}> <input type='checkbox' className='m-2' value={items} onChange={check} /> &ensp;{items}</div>
         )
         })
     }

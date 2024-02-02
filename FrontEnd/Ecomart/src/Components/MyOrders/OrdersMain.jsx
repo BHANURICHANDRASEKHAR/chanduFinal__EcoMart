@@ -22,7 +22,7 @@ export default function OrdersMain() {
     </div>
   )
 }
-const Noresult=()=>{
+export const Noresult=()=>{
   return(<div className='noresult p-5'>
   <img src='https://img.freepik.com/free-vector/hand-drawn-no-data-illustration_23-2150696458.jpg?w=740&t=st=1706689940~exp=1706690540~hmac=06f080e42d22b8497b8e4be8e13027c4611c2f43a46b9e983ff54d3273a20681'/>
   <h4>Sorry, no results found</h4>

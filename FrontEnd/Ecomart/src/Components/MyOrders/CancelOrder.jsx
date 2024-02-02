@@ -7,8 +7,7 @@ export default function CancelOrder() {
   useEffect(()=>{
   myordersdata('cancel_orders',setdeleteorder);
   },[]);
-  console.log(deleteorder)
-  return (
+   return (
     <div className='myorders-child'>
     <SearchItems/>
     <div>{
