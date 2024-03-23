@@ -22,7 +22,7 @@ app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
 app.use(
     cors({
-      origin: ['http://localhost:5173'],
+     origin:"*",
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
       exposedHeaders: ['Content-Type', 'Authorization', 'XMLHttpRequest'],
       credentials: true, // Allow credentials
